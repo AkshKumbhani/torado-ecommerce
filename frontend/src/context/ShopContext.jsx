@@ -56,6 +56,7 @@ export const ShopProvider = ({ children }) => {
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   // User auth state (from localStorage or sessionStorage)
   const [currentUser, setCurrentUser] = useState(() => {
@@ -249,6 +250,7 @@ export const ShopProvider = ({ children }) => {
   return (
     <ShopContext.Provider value={{
       currentPage, setCurrentPage,
+      searchQuery, setSearchQuery,
       isSearchOpen, setIsSearchOpen,
       isLoginOpen, setIsLoginOpen,
       isWishlistOpen, setIsWishlistOpen,

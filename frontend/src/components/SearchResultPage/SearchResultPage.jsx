@@ -22,7 +22,7 @@ const initialProducts = [
 ];
 
 const SearchResultPage = () => {
-  const { setCurrentPage, addToCart, addToWishlist, setIsQuickViewOpen, setSelectedProduct } = useShop();
+  const { setCurrentPage, addToCart, addToWishlist, setIsQuickViewOpen, setSelectedProduct, searchQuery } = useShop();
   const [sortBy, setSortBy] = useState("default");
   const [visibleCount, setVisibleCount] = useState(16);
   const [activeCardId, setActiveCardId] = useState(null);
@@ -63,6 +63,24 @@ const SearchResultPage = () => {
 
   const sortedProducts = useMemo(() => {
     let list = [...productList];
+    if (searchQuery && searchQuery.trim()) {
+      const q = searchQuery.trim().toLowerCase();
+      const isMenOnly = /\bmen\b/i.test(q) && !/\bwomen\b/i.test(q);
+      const isWomenOnly = /\bwomen\b/i.test(q);
+      list = list.filter((p) => {
+        const name = (p.name || '').toLowerCase();
+        const cat = (p.category || '').toLowerCase();
+        const combined = `${name} ${cat}`;
+        if (isMenOnly) {
+          if (cat.includes('women') || name.includes('women')) return false;
+          return /\bmen\b/i.test(name) || /\bmen\b/i.test(cat) || name.includes("men's") || cat.includes("men's") || p.image?.includes('/men-');
+        }
+        if (isWomenOnly) {
+          return name.includes('women') || cat.includes('women') || p.image?.includes('/women-');
+        }
+        return combined.includes(q);
+      });
+    }
     if (sortBy === "price-low") {
       list.sort((a, b) => a.price - b.price);
     } else if (sortBy === "price-high") {
@@ -71,7 +89,7 @@ const SearchResultPage = () => {
       list.sort((a, b) => a.name.localeCompare(b.name));
     }
     return list;
-  }, [sortBy, productList]);
+  }, [sortBy, productList, searchQuery]);
 
   const handleQuickAdd = (product) => {
     addToCart({

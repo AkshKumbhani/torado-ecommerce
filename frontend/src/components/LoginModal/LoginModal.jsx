@@ -344,7 +344,7 @@ const LoginModal = () => {
 
             {profileTab === 'profile' ? (
               <form onSubmit={handleSaveProfile} style={{ textAlign: 'left', marginBottom: '14px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '10px' }}>
+                <div className="ts-profile-grid">
                   <div>
                     <label style={{ fontSize: '11px', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '3px' }}>Full Name</label>
                     <input
@@ -381,7 +381,7 @@ const LoginModal = () => {
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '10px' }}>
+                <div className="ts-profile-grid">
                   <div>
                     <label style={{ fontSize: '11px', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '3px' }}>City</label>
                     <input
@@ -406,7 +406,7 @@ const LoginModal = () => {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '14px' }}>
+                <div className="ts-profile-grid" style={{ marginBottom: '14px' }}>
                   <div>
                     <label style={{ fontSize: '11px', fontWeight: 600, color: '#475569', display: 'block', marginBottom: '3px' }}>State</label>
                     <input

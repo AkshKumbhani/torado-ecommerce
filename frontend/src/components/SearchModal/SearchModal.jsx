@@ -36,7 +36,7 @@ const allProducts = [
 ];
 
 const SearchModal = () => {
-  const { isSearchOpen, setIsSearchOpen, setCurrentPage } = useShop();
+  const { isSearchOpen, setIsSearchOpen, setCurrentPage, setSearchQuery } = useShop();
   const [searchTerm, setSearchTerm] = useState('');
   const [dbProducts, setDbProducts] = useState([]);
 
@@ -63,12 +63,31 @@ const SearchModal = () => {
   const searchResults = useMemo(() => {
     const q = searchTerm.trim().toLowerCase();
     if (!q) return [];
+
+    const isMenOnly = /\bmen\b/i.test(q) && !/\bwomen\b/i.test(q);
+    const isWomenOnly = /\bwomen\b/i.test(q);
+
     return productList
-      .filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q)
-      )
+      .filter((p) => {
+        const name = (p.name || '').toLowerCase();
+        const cat = (p.category || '').toLowerCase();
+        const combined = `${name} ${cat}`;
+
+        if (isMenOnly) {
+          // If category or name contains women, strictly exclude it
+          if (cat.includes('women') || name.includes('women')) {
+            return false;
+          }
+          // Must match 'men' as a distinct word or men's
+          return /\bmen\b/i.test(name) || /\bmen\b/i.test(cat) || name.includes("men's") || cat.includes("men's") || p.image?.includes('/men-');
+        }
+
+        if (isWomenOnly) {
+          return name.includes('women') || cat.includes('women') || p.image?.includes('/women-');
+        }
+
+        return combined.includes(q);
+      })
       .slice(0, 6);
   }, [searchTerm, productList]);
 
@@ -81,6 +100,7 @@ const SearchModal = () => {
 
   const handleNavigateToResults = (e) => {
     e.preventDefault();
+    if (setSearchQuery) setSearchQuery(searchTerm.trim());
     setIsSearchOpen(false);
     setCurrentPage('search-result');
     window.location.hash = '#search-result';
