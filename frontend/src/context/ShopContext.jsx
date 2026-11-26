@@ -2,84 +2,54 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 
 const ShopContext = createContext();
 
+export const resolvePageFromUrl = () => {
+  if (typeof window === 'undefined') return 'home';
+  const hash = window.location.hash.toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  const combined = `${path} ${hash}`;
+
+  if (combined.includes('track-my-order') || combined.includes('track')) return 'track-my-order';
+  if (combined.includes('checkout-payment') || hash === '#payment') return 'checkout-payment';
+  if (combined.includes('checkout-shipping') || hash === '#shipping') return 'checkout-shipping';
+  if (combined.includes('checkout-information') || hash === '#checkout' || combined.includes('checkout')) return 'checkout-information';
+  if (combined.includes('wishlist')) return 'wishlist';
+  if (combined.includes('cart')) return 'cart';
+  if (combined.includes('shop-left-sidebar') || combined.includes('collections')) return 'shop-left-sidebar';
+  if (combined.includes('search-result')) return 'search-result';
+  if (combined.includes('404') || combined.includes('error')) return '404';
+  if (combined.includes('privacy')) return 'privacy-policy';
+  if (combined.includes('terms')) return 'terms-condition';
+  if (combined.includes('refund') || combined.includes('return')) return 'refund-return-policy';
+  if (combined.includes('login')) return 'login';
+  if (combined.includes('register')) return 'register';
+  if (combined.includes('faq')) return 'faq';
+  if (combined.includes('contact')) return 'contact-us';
+  if (combined.includes('single-blog')) return 'single-blog';
+  if (combined.includes('blog')) return 'blog-left-sidebar';
+  if (combined.includes('about')) return 'about-us';
+  if (combined.includes('shop-all-for-women') || combined.includes('women')) return 'shop-all-for-women';
+  if (combined.includes('shop-all-for-men') || combined.includes('men')) return 'shop-all-for-men';
+  if (combined.includes('shop-hidden-sidebar') || hash === '#shop') return 'shop-hidden-sidebar';
+  return 'home';
+};
+
 export const ShopProvider = ({ children }) => {
   // Navigation / Page state
-  const [currentPage, setCurrentPage] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash;
-      const path = window.location.pathname;
-      if (hash.includes('track-my-order') || hash.includes('track') || path.includes('track-my-order')) {
-        return 'track-my-order';
-      }
-      if (hash.includes('checkout-payment') || hash === '#payment' || path.includes('checkout-payment')) {
-        return 'checkout-payment';
-      }
-      if (hash.includes('checkout-shipping') || hash === '#shipping' || path.includes('checkout-shipping')) {
-        return 'checkout-shipping';
-      }
-      if (hash.includes('checkout-information') || hash.includes('checkout') || path.includes('checkout')) {
-        return 'checkout-information';
-      }
-      if (hash.includes('wishlist') || path.includes('wishlist')) {
-        return 'wishlist';
-      }
-      if (hash.includes('cart') || path.includes('cart')) {
-        return 'cart';
-      }
-      if (hash.includes('shop-left-sidebar') || hash.includes('collections') || path.includes('shop-left-sidebar')) {
-        return 'shop-left-sidebar';
-      }
-      if (hash.includes('search-result') || path.includes('search-result')) {
-        return 'search-result';
-      }
-      if (hash.includes('404') || hash.includes('error') || path.includes('404')) {
-        return '404';
-      }
-      if (hash.includes('privacy') || path.includes('privacy-policy')) {
-        return 'privacy-policy';
-      }
-      if (hash.includes('terms') || path.includes('terms-condition')) {
-        return 'terms-condition';
-      }
-      if (hash.includes('refund') || hash.includes('return') || path.includes('refund-return-policy')) {
-        return 'refund-return-policy';
-      }
-      if (hash.includes('login') || path.includes('login')) {
-        return 'login';
-      }
-      if (hash.includes('register') || path.includes('register')) {
-        return 'register';
-      }
-      if (hash.includes('faq') || path.includes('faq')) {
-        return 'faq';
-      }
-      if (hash.includes('contact-us') || path.includes('contact')) {
-        return 'contact-us';
-      }
-      if (hash.includes('single-blog') || path.includes('single-blog')) {
-        return 'single-blog';
-      }
-      if (hash.includes('blog-left-sidebar') || path.includes('blog')) {
-        return 'blog-left-sidebar';
-      }
-      if (hash.includes('about') || path.includes('about')) {
-        return 'about-us';
-      }
-      if (hash.includes('shop-all-for-women') || hash.includes('womens') || hash === '#women' || path.includes('shop-all-for-women')) {
-        return 'shop-all-for-women';
-      }
-      if (hash.includes('shop-all-for-men') || hash.includes('mens') || hash === '#men' || path.includes('shop-all-for-men')) {
-        return 'shop-all-for-men';
-      }
-      if (hash.includes('shop-hidden-sidebar') || path.includes('shop-hidden-sidebar') || hash === '#shop') {
-        return 'shop-hidden-sidebar';
-      }
-      if (hash === '#home') {
-        return 'home';
-      }
-    }
-    return 'home'; // Default page
-  });
+  const [currentPage, setCurrentPage] = useState(() => resolvePageFromUrl());
+
+  // Listen to both hashchange and popstate events
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const target = resolvePageFromUrl();
+      setCurrentPage(target);
+    };
+    window.addEventListener('hashchange', handleUrlChange);
+    window.addEventListener('popstate', handleUrlChange);
+    return () => {
+      window.removeEventListener('hashchange', handleUrlChange);
+      window.removeEventListener('popstate', handleUrlChange);
+    };
+  }, []);
 
   // Modal states
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -215,37 +185,6 @@ export const ShopProvider = ({ children }) => {
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-  React.useEffect(() => {
-    const handleHash = () => {
-      const hash = window.location.hash;
-      if (hash.includes('track-my-order') || hash === '#track-my-order' || hash === '#track') {
-        setCurrentPage('track-my-order');
-      } else if (hash.includes('checkout-payment') || hash === '#checkout-payment' || hash === '#payment') {
-        setCurrentPage('checkout-payment');
-      } else if (hash.includes('checkout-shipping') || hash === '#checkout-shipping' || hash === '#shipping') {
-        setCurrentPage('checkout-shipping');
-      } else if (hash.includes('checkout-information') || hash === '#checkout-information' || hash === '#checkout') {
-        setCurrentPage('checkout-information');
-      } else if (hash.includes('wishlist') || hash === '#wishlist') {
-        setCurrentPage('wishlist');
-      } else if (hash.includes('cart') || hash === '#cart') {
-        setCurrentPage('cart');
-      } else if (hash.includes('about') || hash === '#about' || hash === '#about-us') {
-        setCurrentPage('about-us');
-      } else if (hash.includes('shop-all-for-women') || hash.includes('womens') || hash === '#women') {
-        setCurrentPage('shop-all-for-women');
-      } else if (hash.includes('shop-all-for-men') || hash.includes('mens') || hash === '#men') {
-        setCurrentPage('shop-all-for-men');
-      } else if (hash.includes('shop-hidden-sidebar') || hash === '#shop') {
-        setCurrentPage('shop-hidden-sidebar');
-      } else if (hash === '#home' || hash === '' || hash === '#') {
-        if (hash === '#home') setCurrentPage('home');
-      }
-    };
-    window.addEventListener('hashchange', handleHash);
-    return () => window.removeEventListener('hashchange', handleHash);
-  }, []);
-
   // Product Status state from Backend
   const [productStatuses, setProductStatuses] = useState(() => {
     try {
@@ -286,7 +225,6 @@ export const ShopProvider = ({ children }) => {
     if (!prod || prod.isPromo) return true;
     if (!productStatuses || !productStatuses.length) return true;
 
-    // Match by image, id, or name
     const prodImg = (prod.image || prod.img1 || '').toLowerCase();
     const prodImgFile = prodImg ? prodImg.split('/').pop() : '';
     const prodName = (prod.name || '').trim().toLowerCase();
