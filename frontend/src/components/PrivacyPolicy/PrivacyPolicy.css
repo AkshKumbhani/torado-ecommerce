@@ -1,0 +1,148 @@
+/* ============================================================
+   Privacy Policy Page - Torado Tee Store
+   ============================================================ */
+
+.torado-privacy-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 1. Page Banner */
+.tpp-page-banner {
+  background: linear-gradient(270deg, #FF869E 0%, rgba(253,171,121,0.5) 100%);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 85px 0 80px;
+}
+.tpp-page-banner::before {
+  position: absolute;
+  content: "";
+  left: 15%;
+  top: -30px;
+  height: 140px;
+  width: 140px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  z-index: -1;
+}
+.tpp-page-banner::after {
+  position: absolute;
+  content: "";
+  right: 12%;
+  bottom: 20px;
+  width: 110px;
+  height: 110px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  z-index: -1;
+}
+.tpp-banner-content h2 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 12px;
+}
+.tpp-banner-content h2 strong {
+  font-weight: 900;
+}
+.tpp-breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.tpp-breadcrumb li {
+  color: #3F3F3F;
+  font-weight: 500;
+  font-size: 15px;
+}
+.tpp-breadcrumb li a {
+  color: #3F3F3F;
+  transition: var(--transition);
+}
+.tpp-breadcrumb li a:hover {
+  color: var(--main-color);
+}
+.tpp-breadcrumb li.sep {
+  font-size: 13px;
+  color: #555;
+}
+.tpp-breadcrumb li.active {
+  color: #111;
+  font-weight: 600;
+}
+
+/* 2. Main Content */
+.tpp-content-area {
+  padding: 90px 0 100px;
+}
+.tpp-privacy-wrap {
+  max-width: 960px;
+}
+.tpp-section {
+  margin-bottom: 40px;
+}
+.tpp-section:last-child {
+  margin-bottom: 0;
+}
+.tpp-section h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.tpp-section p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.tpp-bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0 24px;
+}
+.tpp-bullet-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.85;
+  color: #555555;
+  margin-bottom: 12px;
+}
+.tpp-bullet-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--main-color);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .tpp-page-banner {
+    padding: 60px 0 55px;
+  }
+  .tpp-banner-content h2 {
+    font-size: 28px;
+  }
+  .tpp-content-area {
+    padding: 60px 0 60px;
+  }
+  .tpp-section h3 {
+    font-size: 18px;
+  }
+  .tpp-section p,
+  .tpp-bullet-list li {
+    font-size: 14px;
+  }
+}

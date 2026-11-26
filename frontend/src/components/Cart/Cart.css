@@ -1,0 +1,435 @@
+﻿/*================================================
+TS Cart Area CSS (Exact Torado Theme Match)
+=================================================*/
+
+.ts-cart-area {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #ffffff;
+}
+
+.ts-cart-table table {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.ts-cart-table table thead tr {
+  border: none;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.ts-cart-table table thead tr th {
+  vertical-align: middle;
+  padding: 0 25px 20px 25px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  color: #7B7B7B;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+.ts-cart-table table thead tr th:last-child {
+  text-align: end;
+}
+
+.ts-cart-table table tbody tr {
+  border: none;
+  background: #FBFBFB;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #F1F1F1;
+  transition: background-color 0.2s;
+}
+
+.ts-cart-table table tbody tr.border-none {
+  border-bottom: none;
+}
+
+.ts-cart-table table tbody tr td {
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 25px;
+  border: none;
+  background: transparent;
+}
+
+.ts-cart-table table tbody tr td:last-child {
+  text-align: end;
+}
+
+/* Product Column */
+.ts-cart-table table tbody tr td.product-thumbnail {
+  display: flex;
+  align-items: center;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .image {
+  flex-shrink: 0;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .image a img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #f7f7f7;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .title {
+  margin-left: 25px;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .title h3 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .title h3 a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .title h3 a:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .title .list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .title .list li {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3C3C3C;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .title .list li span {
+  color: #767676;
+}
+
+.ts-cart-table table tbody tr td.product-thumbnail .title .list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Price & Subtotal Columns */
+.ts-cart-table table tbody tr td.product-price .unit-amount {
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.ts-cart-table table tbody tr td.product-subtotal .subtotal-amount {
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Quantity Counter */
+.ts-cart-table table tbody tr td.product-quantity .input-counter {
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background: #F1F1F1;
+  border-radius: 50px;
+  padding: 8px 16px;
+}
+
+.ts-cart-table table tbody tr td.product-quantity .input-counter span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.ts-cart-table table tbody tr td.product-quantity .input-counter span:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-cart-table table tbody tr td.product-quantity .input-counter input {
+  color: #1a1a1a;
+  outline: 0;
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  width: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 0;
+}
+
+/* Remove button */
+.ts-cart-table table tbody tr td.remove a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.ts-cart-table table tbody tr td.remove a i {
+  font-size: 26px;
+  color: #1a1a1a;
+  transition: color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.ts-cart-table table tbody tr td.remove a i:hover {
+  color: var(--main-color, #FE4267);
+  transform: scale(1.15);
+}
+
+.ts-cart-table table tbody:not(:first-child) {
+  border-top: unset;
+}
+
+/* Lower Section: Continue Shopping & Totals Box */
+.ts-cart-totals-inner {
+  margin-top: 50px;
+}
+
+.ts-cart-shopping-content a {
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  color: #161414;
+  padding-left: 28px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.ts-cart-shopping-content a i {
+  font-size: 22px;
+  position: absolute;
+  left: 0;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.ts-cart-shopping-content a:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-cart-shopping-content a:hover i {
+  transform: translateX(-4px);
+}
+
+/* Right Totals Box */
+.ts-cart-totals-box {
+  position: relative;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.ts-cart-totals-box .cart-note-shipping {
+  background: #F4F4F4;
+  padding: 15px;
+  display: flex;
+  gap: 12px;
+  border-radius: 4px;
+}
+
+.ts-cart-totals-box .cart-note-shipping .cart-note,
+.ts-cart-totals-box .cart-note-shipping .cart-shipping {
+  background-color: #ffffff;
+  padding: 22px 15px;
+  text-align: center;
+  flex: 1;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ts-cart-totals-box .cart-note-shipping .cart-note:hover,
+.ts-cart-totals-box .cart-note-shipping .cart-shipping:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.ts-cart-totals-box .cart-note-shipping .cart-note img,
+.ts-cart-totals-box .cart-note-shipping .cart-shipping img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.ts-cart-totals-box .cart-note-shipping .cart-note span,
+.ts-cart-totals-box .cart-note-shipping .cart-shipping span {
+  color: #161414;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  margin-top: 12px;
+}
+
+/* Subtotal Row */
+.ts-cart-totals-box .cart-subtotal {
+  margin-top: 30px;
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ts-cart-totals-box .cart-subtotal .sub {
+  font-weight: 700;
+  font-size: 18px;
+  color: #161414;
+}
+
+.ts-cart-totals-box .cart-subtotal .total {
+  font-weight: 800;
+  font-size: 24px;
+  color: #161414;
+}
+
+/* Proceed to Checkout Button */
+.ts-cart-totals-box .cart-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.ts-cart-totals-box .cart-btn .ts-default-btn {
+  width: 100%;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #FC8A45 0%, #FE4267 100%);
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  box-shadow: 0 6px 20px rgba(254, 66, 103, 0.3);
+}
+
+.ts-cart-totals-box .cart-btn .ts-default-btn:hover {
+  opacity: 0.94;
+  color: #ffffff;
+}
+
+.ts-cart-totals-box .cart-btn .ts-default-btn:active {
+  transform: scale(0.99);
+}
+
+.ts-cart-totals-box .cart-btn .ts-default-btn i {
+  font-size: 20px;
+}
+
+/* Optional Note & Shipping Toggle Forms */
+.cart-expandable-box {
+  background: #F9F9F9;
+  border: 1px solid #ECECEC;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.cart-expandable-box textarea,
+.cart-expandable-box input {
+  width: 100%;
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 14px;
+  outline: none;
+  background: #ffffff;
+}
+
+.cart-expandable-box textarea:focus,
+.cart-expandable-box input:focus {
+  border-color: var(--main-color, #FE4267);
+}
+
+/* Empty Cart View */
+.ts-empty-cart {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.ts-empty-cart i {
+  font-size: 70px;
+  color: #D6D6D6;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.ts-empty-cart h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.ts-empty-cart p {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/* Responsive Media Queries */
+@media only screen and (max-width: 767px) {
+  .ts-cart-area {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .ts-cart-table table tbody tr td {
+    padding: 15px 12px;
+  }
+  .ts-cart-table table tbody tr td.product-thumbnail .image a img {
+    width: 65px;
+    height: 65px;
+  }
+  .ts-cart-table table tbody tr td.product-thumbnail .title {
+    margin-left: 14px;
+  }
+  .ts-cart-table table tbody tr td.product-thumbnail .title h3 {
+    font-size: 15px;
+  }
+  .ts-cart-totals-inner {
+    margin-top: 30px;
+  }
+  .ts-cart-totals-inner .ts-cart-shopping-content {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .ts-cart-totals-box {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-cart-table table tbody tr td.product-thumbnail .image a img {
+    max-width: 75px;
+    height: 75px;
+  }
+  .ts-cart-totals-inner {
+    margin-top: 35px;
+  }
+  .ts-cart-totals-box {
+    max-width: 100%;
+  }
+}

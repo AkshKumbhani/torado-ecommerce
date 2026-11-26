@@ -1,0 +1,339 @@
+﻿/*================================================
+TS Wishlist Area CSS (Exact Torado Theme Match)
+=================================================*/
+
+.ts-wishlist-area {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  background-color: #ffffff;
+}
+
+.ts-wishlist-table table {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.ts-wishlist-table table thead tr {
+  border: none;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.ts-wishlist-table table thead tr th {
+  vertical-align: middle;
+  padding: 0 25px 20px 25px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  color: #7B7B7B;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+}
+
+.ts-wishlist-table table thead tr th:last-child {
+  text-align: end;
+}
+
+.ts-wishlist-table table tbody tr {
+  border: none;
+  background: #FBFBFB;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #F1F1F1;
+  transition: background-color 0.2s;
+}
+
+.ts-wishlist-table table tbody tr.border-none {
+  border-bottom: none;
+}
+
+.ts-wishlist-table table tbody tr.border-none .product-add-to-cart button,
+.ts-wishlist-table table tbody tr.border-none .product-add-to-cart a {
+  background: #CBCBCB;
+  cursor: not-allowed;
+}
+
+.ts-wishlist-table table tbody tr.border-none .availability span {
+  color: #9B9B9B;
+}
+
+.ts-wishlist-table table tbody tr td {
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 25px;
+  border: none;
+  background: transparent;
+}
+
+.ts-wishlist-table table tbody tr td:last-child {
+  text-align: end;
+}
+
+/* Product Column */
+.ts-wishlist-table table tbody tr td.product-thumbnail {
+  display: flex;
+  align-items: center;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .image {
+  flex-shrink: 0;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .image a img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #f7f7f7;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .title {
+  margin-left: 25px;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .title h3 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .title h3 a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .title h3 a:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .title .list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .title .list li {
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3C3C3C;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .title .list li span {
+  color: #767676;
+}
+
+.ts-wishlist-table table tbody tr td.product-thumbnail .title .list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Price Column */
+.ts-wishlist-table table tbody tr td.product-price .unit-amount {
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Add to Cart Button */
+.ts-wishlist-table table tbody tr td.product-add-to-cart button,
+.ts-wishlist-table table tbody tr td.product-add-to-cart a {
+  display: inline-block;
+  padding: 14px 38px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  text-decoration: none;
+}
+
+.ts-wishlist-table table tbody tr td.product-add-to-cart button:hover:not(:disabled),
+.ts-wishlist-table table tbody tr td.product-add-to-cart a:hover {
+  background-color: var(--main-color, #FE4267);
+}
+
+.ts-wishlist-table table tbody tr td.product-add-to-cart button:disabled {
+  background-color: #CBCBCB;
+  cursor: not-allowed;
+}
+
+/* Availability Column */
+.ts-wishlist-table table tbody tr td.availability span {
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Remove Button */
+.ts-wishlist-table table tbody tr td.remove a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.ts-wishlist-table table tbody tr td.remove a i {
+  font-size: 26px;
+  color: #1a1a1a;
+  transition: color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.ts-wishlist-table table tbody tr td.remove a i:hover {
+  color: var(--main-color, #FE4267);
+  transform: scale(1.15);
+}
+
+.ts-wishlist-table table tbody:not(:first-child) {
+  border-top: unset;
+}
+
+/* Empty Wishlist View */
+.ts-empty-wishlist {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.ts-empty-wishlist i {
+  font-size: 70px;
+  color: #D6D6D6;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.ts-empty-wishlist h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.ts-empty-wishlist p {
+  color: #777;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+/*================================================
+Recommended For You Section (Screenshot 3 & 4)
+=================================================*/
+.ts-recommended-section {
+  padding-bottom: 100px;
+}
+
+.ts-recommended-section .section-title {
+  margin-bottom: 35px;
+}
+
+.ts-recommended-section .section-title h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.ts-recommended-card {
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.ts-recommended-card:hover {
+  transform: translateY(-5px);
+}
+
+.ts-recommended-card .card-image {
+  background: #F4F4F4;
+  text-align: center;
+  padding: 45px 30px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ts-recommended-card .card-image a img {
+  width: auto;
+  max-height: 220px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.ts-recommended-card:hover .card-image a img {
+  transform: scale(1.08);
+}
+
+.ts-recommended-card .card-content {
+  padding-top: 20px;
+}
+
+.ts-recommended-card .card-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ts-recommended-card .card-content h4 a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ts-recommended-card .card-content h4 a:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-recommended-card .card-content span.category {
+  font-size: 14px;
+  color: #8E8E8E;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ts-recommended-card .card-content .price {
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--main-color, #FE4267);
+}
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+  .ts-wishlist-area {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .ts-wishlist-table table tbody tr td {
+    padding: 15px 12px;
+  }
+  .ts-wishlist-table table tbody tr td.product-thumbnail .image a img {
+    width: 65px;
+    height: 65px;
+  }
+  .ts-wishlist-table table tbody tr td.product-thumbnail .title {
+    margin-left: 14px;
+  }
+  .ts-wishlist-table table tbody tr td.product-thumbnail .title h3 {
+    font-size: 15px;
+  }
+  .ts-wishlist-table table tbody tr td.product-add-to-cart button,
+  .ts-wishlist-table table tbody tr td.product-add-to-cart a {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+  .ts-recommended-section {
+    padding-bottom: 50px;
+  }
+  .ts-recommended-section .section-title h3 {
+    font-size: 22px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-wishlist-table table tbody tr td.product-thumbnail .image a img {
+    max-width: 75px;
+    height: 75px;
+  }
+}

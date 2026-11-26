@@ -1,0 +1,59 @@
+/* TopBar Styles */
+.ts-top-bar-area {
+  background-image: url('/assets/images/top-bar-bg.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.ts-top-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ts-top-bar-content img {
+  max-width: 24px;
+  height: auto;
+}
+
+.ts-top-bar-content span {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.ts-top-bar-content span b {
+  font-weight: 800;
+  margin: 0 4px;
+}
+
+.ts-top-bar-content span i {
+  color: #000000;
+  margin-left: 6px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 767px) {
+  .ts-top-bar-content span {
+    font-size: 13px;
+  }
+}
+
+/* Laptop Responsive Fix (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ts-top-bar-area {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+}

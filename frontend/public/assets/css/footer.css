@@ -1,0 +1,292 @@
+/*================================================
+Footer Area CSS
+=================================================*/
+.ts-footer-area {
+  background: #242121;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.ts-footer-area .container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.ts-footer-area::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 85px;
+  width: 85px;
+  background: linear-gradient(241.45deg, rgba(255, 255, 255, 0.05) 12.37%, rgba(255, 255, 255, 0.01) 88.85%);
+  border-radius: 50%;
+  top: 15%;
+  left: 20%;
+  transform: translateY(-15%) translateX(-20%);
+  z-index: -1;
+}
+.ts-footer-area::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  height: 170px;
+  width: 170px;
+  background: linear-gradient(241.45deg, rgba(255, 255, 255, 0.05) 12.37%, rgba(255, 255, 255, 0.01) 88.85%);
+  border-radius: 50%;
+  right: 100px;
+  bottom: -65px;
+  z-index: -1;
+}
+
+.ts-single-footer-widget {
+  margin-bottom: 25px;
+}
+.ts-single-footer-widget .widget-logo {
+  margin-bottom: 30px;
+}
+.ts-single-footer-widget p {
+  color: #B0B0B0;
+  margin-bottom: 0;
+  max-width: 300px;
+}
+.ts-single-footer-widget .ts-footer-social {
+  padding-left: 0;
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+.ts-single-footer-widget .ts-footer-social span {
+  display: block;
+  margin-bottom: 20px;
+  color: var(--white-color);
+}
+.ts-single-footer-widget .ts-footer-social li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+.ts-single-footer-widget .ts-footer-social li:last-child {
+  margin-right: 0;
+}
+.ts-single-footer-widget h3 {
+  font-size: 18px;
+  color: var(--white-color);
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.ts-single-footer-widget .quick-links {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-single-footer-widget .quick-links li {
+  margin-bottom: 25px;
+}
+.ts-single-footer-widget .quick-links li:last-child {
+  margin-bottom: 0;
+}
+.ts-single-footer-widget .quick-links li a {
+  color: #B0B0B0;
+}
+.ts-single-footer-widget .quick-links li a:hover {
+  color: var(--main-color);
+}
+.ts-single-footer-widget .ts-offers-list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-single-footer-widget .ts-offers-list li {
+  display: inline-block;
+  margin-right: 50px;
+}
+.ts-single-footer-widget .ts-offers-list li:last-child {
+  margin-right: 0;
+}
+.ts-single-footer-widget .ts-offers-list .list {
+  margin-bottom: 0;
+}
+.ts-single-footer-widget .ts-offers-list .list [type=checkbox]:checked, .ts-single-footer-widget .ts-offers-list .list [type=checkbox]:not(:checked) {
+  display: none;
+}
+.ts-single-footer-widget .ts-offers-list .list [type=checkbox]:checked + label, .ts-single-footer-widget .ts-offers-list .list [type=checkbox]:not(:checked) + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  color: #B0B0B0;
+}
+.ts-single-footer-widget .ts-offers-list .list [type=checkbox]:checked + label:before, .ts-single-footer-widget .ts-offers-list .list [type=checkbox]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease;
+  background: transparent;
+  border-radius: 50px;
+  border: 1px solid #9E9E9E;
+}
+.ts-single-footer-widget .ts-offers-list .list [type=checkbox]:checked + label:after, .ts-single-footer-widget .ts-offers-list .list [type=checkbox]:not(:checked) + label:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--white-color);
+  border-radius: 50px;
+  position: absolute;
+  top: 6.5px;
+  left: 5px;
+  transition: all 0.2s ease;
+}
+.ts-single-footer-widget .ts-offers-list .list [type=checkbox]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.ts-single-footer-widget .ts-offers-list .list [type=checkbox]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.ts-single-footer-widget .ts-offers-list .list [type=checkbox]:hover + label:before {
+  border: 1px solid var(--white-color);
+}
+.ts-single-footer-widget .ts-offers-list .list [type=checkbox]:checked + label:before {
+  border: 1px solid var(--white-color);
+}
+.ts-single-footer-widget .ts-newsletter-form {
+  position: relative;
+  margin-top: 50px;
+}
+.ts-single-footer-widget .ts-newsletter-form .input-newsletter {
+  display: inline-block;
+  width: 100%;
+  background-color: transparent;
+  color: #949190;
+  font-size: 15px;
+  outline: 0;
+  padding: 0 0 25px;
+  border: none;
+  border-bottom: 1px solid #706A6A;
+}
+.ts-single-footer-widget .ts-newsletter-form .input-newsletter::-moz-placeholder {
+  color: #949190;
+  -moz-transition: var(--transition);
+  transition: var(--transition);
+}
+.ts-single-footer-widget .ts-newsletter-form .input-newsletter::placeholder {
+  color: #949190;
+  transition: var(--transition);
+}
+.ts-single-footer-widget .ts-newsletter-form .input-newsletter:focus {
+  border-bottom: 1px solid var(--main-color);
+}
+.ts-single-footer-widget .ts-newsletter-form .input-newsletter:focus::-moz-placeholder {
+  color: transparent;
+}
+.ts-single-footer-widget .ts-newsletter-form .input-newsletter:focus::placeholder {
+  color: transparent;
+}
+.ts-single-footer-widget .ts-newsletter-form button {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-size: 25px;
+  color: var(--white-color);
+  transition: var(--transition);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.ts-single-footer-widget .ts-newsletter-form button:hover {
+  color: var(--main-color);
+}
+
+/*================================================
+TS Copyright Area CSS
+=================================================*/
+.ts-copyright-area {
+  background: #1D1C1C;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.ts-copyright-area .copyright-area-content p {
+  color: #B2ABA9;
+}
+.ts-copyright-area .copyright-area-content p span {
+  color: #FF6641;
+  font-weight: 700;
+}
+.ts-copyright-area .copyright-area-content p a {
+  color: #FF6641;
+  font-weight: 700;
+}
+
+/*================================================
+Go Top Area CSS
+=================================================*/
+.go-top {
+  position: fixed;
+  cursor: pointer;
+  bottom: -100px;
+  right: 20px;
+  color: var(--white-color);
+  background-color: var(--main-color);
+  z-index: 99;
+  width: 45px;
+  text-align: center;
+  height: 45px;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 50%;
+  font-size: 22px;
+  transition: var(--transition);
+  overflow: hidden;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+.go-top i {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 45%;
+  transform: translateY(-45%);
+  text-align: center;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.go-top.active {
+  opacity: 1;
+  visibility: visible;
+  bottom: 30px;
+}
+.go-top:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  transition: var(--transition);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .ts-footer-area .container-fluid {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+    max-width: 540px;
+  }
+  .ts-single-footer-widget .ts-offers-list li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+}
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+  .ts-single-footer-widget .ts-offers-list li {
+    margin-right: 20px;
+  }
+}
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+  .ts-footer-area .container-fluid {
+    max-width: 1920px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}/*# sourceMappingURL=footer.css.map */

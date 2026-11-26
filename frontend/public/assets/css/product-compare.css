@@ -1,0 +1,163 @@
+/*================================================
+TS Products Compare Area CSS
+=================================================*/
+.ts-products-compare-table .table {
+  margin-bottom: 0;
+}
+.ts-products-compare-table .table thead th {
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 0 30px 30px 30px;
+  border-right: 1px solid #EDE3E3;
+  border-left: 1px solid #EDE3E3;
+  border-bottom: none;
+}
+.ts-products-compare-table .table thead th:first-child {
+  border-left: none;
+  padding: 0 130px;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image {
+  position: relative;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image .dropdown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image .dropdown .dropdown-toggle {
+  border: none;
+  background-color: transparent;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image .dropdown .dropdown-toggle i {
+  display: inline-block;
+  padding: 5px;
+  background-color: var(--white-color);
+  color: #2A174E;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image .dropdown .dropdown-toggle::after {
+  display: none;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image .dropdown .dropdown-menu {
+  padding-left: 0;
+  margin-bottom: 0;
+  background-color: var(--white-color);
+  border-radius: 5px;
+  border: none;
+  transform: translate(5px, 55px) !important;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image .dropdown .dropdown-menu li {
+  list-style-type: none;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid #EBEAF7;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image .dropdown .dropdown-menu li a {
+  display: inline-block;
+  color: #1A1A1A;
+  padding: 10px 15px;
+  width: 100%;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-image .dropdown .dropdown-menu li:last-child {
+  border-bottom: none;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-content {
+  padding: 25px 0 0 25px;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-content h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-content h3 a {
+  color: var(--black-color);
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-content h3 a:hover {
+  color: var(--main-color);
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-content span {
+  font-size: 15px;
+  color: #8E8E8E;
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+.ts-products-compare-table .table thead th .products-compare-card .compare-content .price {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--main-color);
+}
+.ts-products-compare-table .table tbody .space-light-orange-color td {
+  padding: 25px 30px;
+  color: #161414;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  background: #FFE3DC !important;
+}
+.ts-products-compare-table .table tbody tr td {
+  font-weight: 500;
+  font-size: 14px;
+  color: #7E7E7E;
+  padding: 25px 50px;
+  border: 1px solid #EDE3E3;
+}
+.ts-products-compare-table .table tbody tr td:first-child {
+  padding: 25px 30px;
+}
+.ts-products-compare-table .table tbody tr td .no {
+  display: flex;
+  align-items: center;
+}
+.ts-products-compare-table .table tbody tr td .no i {
+  display: inline-block;
+  background: linear-gradient(125.56deg, #EF5350 6.42%, #C62828 93.44%);
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50px;
+  text-align: center;
+  color: var(--white-color);
+  margin-right: 10px;
+  font-size: 18px;
+}
+.ts-products-compare-table .table tbody tr td .yes {
+  display: flex;
+  align-items: center;
+}
+.ts-products-compare-table .table tbody tr td .yes i {
+  display: inline-block;
+  background: #3CBD96;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50px;
+  text-align: center;
+  color: var(--white-color);
+  margin-right: 10px;
+  font-size: 18px;
+}
+.ts-products-compare-table .table tbody tr td .buy-btn {
+  padding: 15px 30px;
+  display: inline-block;
+  background: var(--gradient-color);
+  color: var(--white-color);
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: var(--transition);
+}
+.ts-products-compare-table .table tbody tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: none;
+}
+.ts-products-compare-table .table tbody:not(:first-child) {
+  border-top: unset;
+}
+
+/* Max width 767px */
+/* Min width 768px to Max width 991px */
+/* Min width 992px to Max width 1199px */
+/* Min width 1200px to Max width 1399px */
+/* Min width 1600px *//*# sourceMappingURL=product-compare.css.map */

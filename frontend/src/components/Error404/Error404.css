@@ -1,0 +1,153 @@
+/* ============================================================
+   404 Error Page - Torado Tee Store
+   ============================================================ */
+
+.torado-404-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 1. Page Banner */
+.te-page-banner {
+  background: linear-gradient(270deg, #FF869E 0%, rgba(253,171,121,0.5) 100%);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 85px 0 80px;
+}
+.te-page-banner::before {
+  position: absolute;
+  content: "";
+  left: 15%;
+  top: -30px;
+  height: 140px;
+  width: 140px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  z-index: -1;
+}
+.te-page-banner::after {
+  position: absolute;
+  content: "";
+  right: 12%;
+  bottom: 20px;
+  width: 110px;
+  height: 110px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  z-index: -1;
+}
+.te-banner-content h2 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 12px;
+}
+.te-banner-content h2 strong {
+  font-weight: 900;
+}
+.te-breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.te-breadcrumb li {
+  color: #3F3F3F;
+  font-weight: 500;
+  font-size: 15px;
+}
+.te-breadcrumb li a {
+  color: #3F3F3F;
+  transition: var(--transition);
+}
+.te-breadcrumb li a:hover {
+  color: var(--main-color);
+}
+.te-breadcrumb li.sep {
+  font-size: 13px;
+  color: #555;
+}
+.te-breadcrumb li.active {
+  color: #111;
+  font-weight: 600;
+}
+
+/* 2. Error Area */
+.te-error-area {
+  padding: 90px 0 100px;
+}
+.te-error-content {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.te-error-image {
+  margin-bottom: 40px;
+}
+.te-error-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 380px;
+  display: inline-block;
+  animation: floatError 3.5s ease-in-out infinite;
+}
+@keyframes floatError {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.te-error-content h2 {
+  font-size: 38px;
+  font-weight: 900;
+  color: #111111;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.te-error-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666666;
+  margin-bottom: 32px;
+}
+
+.te-home-btn {
+  padding: 16px 42px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .te-page-banner {
+    padding: 60px 0 55px;
+  }
+  .te-banner-content h2 {
+    font-size: 28px;
+  }
+  .te-error-area {
+    padding: 60px 0 60px;
+  }
+  .te-error-content h2 {
+    font-size: 28px;
+  }
+  .te-error-content p {
+    font-size: 14px;
+  }
+  .te-home-btn {
+    padding: 14px 30px;
+    font-size: 14px;
+  }
+}

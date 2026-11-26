@@ -1,0 +1,52 @@
+/*================================================
+TS Track My Order Area CSS
+=================================================*/
+.ts-track-order-content {
+  max-width: 550px;
+  margin: auto;
+}
+.ts-track-order-content h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.ts-track-order-content form .form-group {
+  margin-bottom: 25px;
+}
+.ts-track-order-content form .form-group label {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.ts-track-order-content form .form-group .form-control {
+  display: inline-block;
+  height: 55px;
+  outline: 0;
+  box-shadow: unset;
+  padding: 15px 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  color: var(--paragraph-color);
+  transition: var(--transition);
+}
+.ts-track-order-content form .form-group .form-control:focus {
+  border: 1px solid var(--main-color);
+}
+.ts-track-order-content form .ts-default-btn {
+  border: none;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .ts-track-order-content h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-track-order-content h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=track-my-order.css.map */

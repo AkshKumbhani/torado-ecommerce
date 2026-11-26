@@ -1,0 +1,214 @@
+/* ============================================================
+   Contact Us Page - Torado Tee Store
+   ============================================================ */
+
+.torado-contact-page { width: 100%; min-height: 100vh; }
+
+/* 1. Page Banner */
+.tc-page-banner {
+  background: linear-gradient(270deg, #FF869E 0%, rgba(253,171,121,0.5) 100%);
+  position: relative; z-index: 1; overflow: hidden;
+  padding: 85px 0 80px;
+}
+.tc-page-banner::before {
+  position: absolute; content: "";
+  left: 15%; top: -30px;
+  height: 140px; width: 140px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.1) 100%);
+  border-radius: 50%; z-index: -1;
+}
+.tc-page-banner::after {
+  position: absolute; content: "";
+  right: 12%; bottom: 20px;
+  width: 110px; height: 110px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%);
+  border-radius: 50%; z-index: -1;
+}
+.tc-banner-content h2 {
+  font-size: 42px; font-weight: 700;
+  margin-bottom: 12px; color: #111;
+}
+.tc-banner-content h2 span { font-weight: 900; }
+.tc-breadcrumb {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; justify-content: center; align-items: center; gap: 10px;
+}
+.tc-breadcrumb li { color: #3F3F3F; font-weight: 500; font-size: 15px; }
+.tc-breadcrumb li a { color: #3F3F3F; transition: var(--transition); }
+.tc-breadcrumb li a:hover { color: var(--main-color); }
+.tc-breadcrumb li.sep { color: #555; font-size: 13px; }
+.tc-breadcrumb li.active { color: #111; font-weight: 600; }
+
+/* 2. Contact Area */
+.tc-contact-area { padding: 90px 0 100px; }
+
+/* Left form */
+.tc-contact-form-wrap h2 {
+  font-size: 36px; font-weight: 700;
+  color: #111; line-height: 1.35;
+  margin-bottom: 32px;
+}
+.tc-contact-form-wrap h2 strong { font-weight: 900; }
+.tc-success-msg {
+  background: #e6f9ef; color: #1a8a45;
+  padding: 12px 18px; border-radius: 8px;
+  margin-bottom: 22px; font-weight: 500;
+}
+.tc-form-row { margin-bottom: 20px; }
+.tc-form-group { position: relative; }
+.tc-form-group label {
+  display: block; font-size: 14px; font-weight: 600;
+  color: #333; margin-bottom: 8px;
+}
+.tc-form-group .req { color: var(--main-color); }
+.tc-form-group input,
+.tc-form-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #DEDEDE;
+  border-radius: 0;
+  padding: 14px 4px;
+  font-size: 14px; color: #333;
+  background: transparent;
+  outline: none;
+  transition: var(--transition);
+  font-family: inherit;
+}
+.tc-form-group input:focus,
+.tc-form-group textarea:focus { border-bottom-color: var(--main-color); }
+.tc-form-group input.error,
+.tc-form-group textarea.error { border-bottom-color: #e53935; }
+.tc-form-group input::placeholder,
+.tc-form-group textarea::placeholder { color: #AEAEAE; }
+.tc-form-group textarea { resize: vertical; min-height: 120px; }
+.tc-error { font-size: 12px; color: #e53935; display: block; margin-top: 4px; }
+
+.tc-save-row { margin: 20px 0 28px; }
+.tc-checkbox-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  cursor: pointer; font-size: 14px; color: #555;
+}
+.tc-checkbox-label input[type="checkbox"] {
+  width: 18px; height: 18px;
+  border: 1px solid #DEDEDE;
+  border-radius: 3px; cursor: pointer;
+  accent-color: var(--main-color);
+  flex-shrink: 0;
+  padding: 0;
+}
+.tc-send-btn {
+  padding: 16px 42px;
+  font-size: 16px; font-weight: 600;
+  border-radius: 50px;
+  display: inline-flex; align-items: center; gap: 8px;
+  cursor: pointer;
+}
+
+/* Right Info */
+.tc-info-wrap { padding-left: 30px; }
+.tc-info-card { margin-bottom: 32px; padding-bottom: 28px; border-bottom: 1px solid #F0F0F0; }
+.tc-info-card:last-child { border-bottom: none; margin-bottom: 0; }
+.tc-info-card h4 {
+  font-size: 18px; font-weight: 700; color: #111;
+  margin-bottom: 12px;
+}
+.tc-info-card p { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 4px; }
+.tc-info-card p strong { color: #111; font-weight: 700; }
+.tc-social-links {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; align-items: center; gap: 12px;
+}
+.tc-social-links li a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(270deg, #FE4267 0%, #FC8A45 100%);
+  color: #fff; font-size: 20px;
+  transition: var(--transition);
+}
+.tc-social-links li a:hover { opacity: 0.85; transform: translateY(-3px); }
+
+/* 3. Google Map */
+.tc-map-area {
+  width: 100%; height: 480px;
+  position: relative; overflow: hidden;
+}
+.tc-map-area iframe {
+  width: 100%; height: 100%; border: none; display: block;
+}
+
+/* 4. Brands Strip */
+.tc-brands-area {
+  background: #fff;
+  overflow: hidden;
+  padding: 40px 0;
+  border-top: 1px solid #F5F5F5;
+}
+.tc-brands-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  animation: brands-scroll 22s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+@keyframes brands-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.tc-brand-logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  flex-shrink: 0;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.3s;
+}
+.tc-brand-logo:hover { opacity: 1; }
+.brand-name {
+  font-size: 22px; font-weight: 800;
+  color: #111; letter-spacing: -0.5px;
+  display: block;
+}
+.brand-sub {
+  font-size: 9px; font-weight: 500;
+  color: #888; text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block; margin-top: 2px;
+}
+
+/* Brand style overrides */
+.brand-hipster .brand-name { font-family: serif; font-style: italic; color: #222; }
+.brand-rose .brand-name { color: #c0392b; font-family: Georgia, serif; }
+.brand-sophia .brand-name { font-family: cursive; color: #8e44ad; }
+.brand-b .brand-name {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: linear-gradient(135deg, #00bcd4, #3f51b5);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.brand-annas .brand-name { font-family: Georgia, serif; color: #27ae60; }
+.brand-lightning .brand-name { font-size: 36px; color: #e67e22; }
+.brand-diana .brand-name { font-family: serif; font-size: 16px; color: #2c3e50; letter-spacing: 0.05em; }
+.brand-carol .brand-name { font-family: Georgia, serif; color: #e91e63; font-style: italic; }
+
+/* Responsive */
+@media (max-width: 991px) {
+  .tc-info-wrap { padding-left: 0; margin-top: 48px; }
+  .tc-contact-form-wrap h2 { font-size: 28px; }
+  .tc-map-area { height: 380px; }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tc-map-area { height: 450px; }
+}
+@media (max-width: 767px) {
+  .tc-page-banner { padding: 60px 0 55px; }
+  .tc-banner-content h2 { font-size: 30px; }
+  .tc-contact-area { padding: 60px 0 60px; }
+  .tc-contact-form-wrap h2 { font-size: 22px; margin-bottom: 24px; }
+  .tc-map-area { height: 280px; }
+  .tc-send-btn { width: 100%; justify-content: center; }
+  .tc-brands-area { padding: 25px 0; }
+}

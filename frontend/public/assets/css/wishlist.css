@@ -1,0 +1,129 @@
+/*================================================
+TS Wishlist Area CSS
+=================================================*/
+.ts-wishlist-table table {
+  margin-bottom: 0;
+}
+.ts-wishlist-table table thead tr {
+  border: none;
+}
+.ts-wishlist-table table thead tr th {
+  vertical-align: middle;
+  padding: 0 25px 25px 25px;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 15px;
+  border: none;
+  color: #7B7B7B;
+  letter-spacing: 0.05em;
+}
+.ts-wishlist-table table thead tr th:last-child {
+  text-align: end;
+}
+.ts-wishlist-table table tbody tr {
+  border: none;
+  background: #FBFBFB;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #F1F1F1;
+}
+.ts-wishlist-table table tbody tr.border-none {
+  border-bottom: none;
+}
+.ts-wishlist-table table tbody tr.border-none .product-add-to-cart a {
+  background: #CBCBCB;
+}
+.ts-wishlist-table table tbody tr.border-none .availability span {
+  color: #9B9B9B;
+}
+.ts-wishlist-table table tbody tr td {
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 25px;
+  border: none;
+}
+.ts-wishlist-table table tbody tr td:last-child {
+  text-align: end;
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail {
+  display: flex;
+  align-items: center;
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail .image a img {
+  width: 100px;
+  border-radius: 5px;
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail .title {
+  margin-left: 25px;
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail .title h3 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail .title h3 a {
+  color: var(--black-color);
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail .title .list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail .title .list li {
+  list-style-type: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3C3C3C;
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail .title .list li span {
+  color: #686868;
+}
+.ts-wishlist-table table tbody tr td.product-thumbnail .title .list li:last-child {
+  margin-bottom: 0;
+}
+.ts-wishlist-table table tbody tr td.product-price .unit-amount {
+  color: var(--black-color);
+  font-weight: 500;
+  font-size: 14px;
+}
+.ts-wishlist-table table tbody tr td.product-add-to-cart a {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+.ts-wishlist-table table tbody tr td.product-add-to-cart a:hover {
+  background-color: var(--main-color);
+}
+.ts-wishlist-table table tbody tr td.availability span {
+  color: var(--black-color);
+  font-weight: 500;
+  font-size: 14px;
+}
+.ts-wishlist-table table tbody tr td.remove a i {
+  font-size: 25px;
+  color: var(--black-color);
+  transition: var(--transition);
+}
+.ts-wishlist-table table tbody tr td.remove a i:hover {
+  color: var(--main-color);
+}
+.ts-wishlist-table table tbody:not(:first-child) {
+  border-top: unset;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .ts-wishlist-table table tbody tr td.product-thumbnail .image a img {
+    max-width: 65px;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-wishlist-table table tbody tr td.product-thumbnail .image a img {
+    max-width: 65px;
+  }
+}/*# sourceMappingURL=wishlist.css.map */

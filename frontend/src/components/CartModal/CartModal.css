@@ -1,0 +1,324 @@
+﻿/*================================================
+Cart Modal / Slide-in Drawer CSS
+(Exact Torado Demo Match)
+=================================================*/
+
+/* Backdrop */
+.ts-cart-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  animation: fadeInBackdrop 0.3s ease forwards;
+}
+
+@keyframes fadeInBackdrop {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Slide-in Right Container */
+.ts-cart-modal-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 440px;
+  max-width: 100vw;
+  height: 100%;
+  background: #ffffff;
+  z-index: 10000;
+  padding: 35px 30px;
+  overflow-y: auto;
+  animation: slideInRight 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+/* Header */
+.cart-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+}
+
+.cart-panel-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.cart-panel-header .close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #222;
+  font-size: 26px;
+  line-height: 1;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-panel-header .close-btn:hover {
+  color: var(--main-color, #FE4267);
+}
+
+/* Cart Items List */
+.ts-cart-drawer-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* Individual Cart Card (Matches Screenshot 2) */
+.ts-cart-drawer-card {
+  background: #F8F9FA;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+
+.ts-cart-drawer-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Card Thumbnail */
+.ts-cart-card-img {
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 5px;
+}
+
+.ts-cart-card-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Card Details */
+.ts-cart-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ts-cart-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.ts-cart-card-title a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ts-cart-card-title a:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-cart-card-meta {
+  font-size: 13px;
+  color: #767676;
+  margin-bottom: 2px;
+}
+
+.ts-cart-card-price {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+/* Card Controls Row */
+.ts-cart-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Quantity Pill (- 1 +) */
+.ts-card-counter {
+  display: inline-flex;
+  align-items: center;
+  background: #EBEBEB;
+  border-radius: 50px;
+  padding: 4px 12px;
+  gap: 12px;
+}
+
+.ts-card-counter button {
+  background: transparent;
+  border: none;
+  color: #222;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.ts-card-counter button:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-card-counter span.qty-num {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  min-width: 14px;
+  text-align: center;
+}
+
+/* Trash Icon Button */
+.ts-cart-card-remove {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555555;
+  font-size: 19px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.ts-cart-card-remove:hover {
+  color: #E74C3C;
+  transform: scale(1.15);
+}
+
+/* Drawer Footer */
+.ts-cart-drawer-footer {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #EEEEEE;
+}
+
+.ts-cart-drawer-subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.ts-cart-drawer-subtotal .sub {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.ts-cart-drawer-subtotal .total {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+.ts-cart-drawer-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ts-cart-drawer-btns .btn-view-cart {
+  width: 100%;
+  height: 50px;
+  border: 1.5px solid #222222;
+  border-radius: 50px;
+  background: transparent;
+  color: #222222;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.ts-cart-drawer-btns .btn-view-cart:hover {
+  background: #222222;
+  color: #ffffff;
+}
+
+.ts-cart-drawer-btns .btn-checkout {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #FC8A45 0%, #FE4267 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(254, 66, 103, 0.25);
+}
+
+.ts-cart-drawer-btns .btn-checkout:hover {
+  opacity: 0.93;
+}
+
+/* Empty State */
+.ts-cart-drawer-empty {
+  text-align: center;
+  padding: 60px 10px;
+  color: #888;
+}
+
+.ts-cart-drawer-empty i {
+  font-size: 55px;
+  color: #DDD;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.ts-cart-drawer-empty p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 480px) {
+  .ts-cart-modal-container {
+    width: 100vw;
+    padding: 25px 20px;
+  }
+}

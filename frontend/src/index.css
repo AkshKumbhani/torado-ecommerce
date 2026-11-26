@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --font-family: "Outfit", sans-serif;
+  --main-color: #FE4267;
+  --gradient-color: linear-gradient(270deg, #FE4267 0%, #FC8A45 100%);
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --paragraph-color: #767676;
+  --transition: all 0.3s ease;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--paragraph-color);
+  background-color: var(--white-color);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--black-color);
+  font-family: var(--font-family);
+  font-weight: 800;
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Gradient & Pill Buttons */
+.ts-default-btn {
+  background: var(--gradient-color);
+  color: #ffffff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 65px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(254, 66, 103, 0.3);
+}
+
+.ts-default-btn i {
+  margin-left: 8px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.ts-default-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(254, 66, 103, 0.45);
+  color: #ffffff !important;
+}
+
+.ts-default-btn:hover i {
+  transform: translateX(4px);
+}
+
+.ts-default-btn.with-black {
+  background: #000000;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ts-default-btn.with-black:hover {
+  background: var(--gradient-color);
+  box-shadow: 0 8px 25px rgba(254, 66, 103, 0.45);
+}
+
+.ts-pill-outline-btn {
+  background: transparent;
+  color: #000000 !important;
+  border: 2px solid var(--main-color);
+  border-radius: 65px;
+  padding: 12px 34px;
+  font-weight: 700;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(254, 66, 103, 0.15);
+}
+
+.ts-pill-outline-btn i {
+  margin-left: 8px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.ts-pill-outline-btn:hover {
+  background: var(--gradient-color);
+  border-color: transparent;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(254, 66, 103, 0.35);
+}
+
+.ts-pill-outline-btn:hover i {
+  transform: translateX(4px);
+}
+
+.ts-optional-btn {
+  background-color: transparent;
+  color: #000000 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 65px;
+  border: 1px solid #000000;
+  transition: var(--transition);
+}
+
+.ts-optional-btn:hover {
+  background: var(--gradient-color);
+  border-color: transparent;
+  color: #ffffff !important;
+}
+
+/* Laptop Responsive Fix (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  html,
+  body,
+  #root,
+  .torado-app {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

@@ -1,0 +1,198 @@
+/*================================================
+FAQ Area CSS
+=================================================*/
+.ts-faq-inner {
+  max-width: 1080px;
+  margin: auto;
+}
+
+.ts-faq-left-content {
+  padding-right: 35px;
+}
+.ts-faq-left-content .search-form {
+  position: relative;
+  margin-bottom: 40px;
+}
+.ts-faq-left-content .search-form .search-field {
+  background: #F5F5F5;
+  display: inline-block;
+  height: 55px;
+  border-radius: 5px;
+  color: #656262;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: unset;
+  border: none;
+  padding: 10px 55px 10px 20px;
+  transition: var(--transition);
+  outline: 0;
+  width: 100%;
+}
+.ts-faq-left-content .search-form .search-field::-moz-placeholder {
+  color: #656262;
+  -moz-transition: var(--transition);
+  transition: var(--transition);
+}
+.ts-faq-left-content .search-form .search-field::placeholder {
+  color: #656262;
+  transition: var(--transition);
+}
+.ts-faq-left-content .search-form .search-field:focus::-moz-placeholder {
+  color: transparent;
+}
+.ts-faq-left-content .search-form .search-field:focus::placeholder {
+  color: transparent;
+}
+.ts-faq-left-content .search-form button {
+  border: none;
+  color: var(--black-color);
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  top: 1px;
+  background-color: transparent;
+  transition: var(--transition);
+  height: 55px;
+}
+.ts-faq-left-content .search-form button:hover {
+  color: var(--main-color);
+}
+.ts-faq-left-content .collapse-widget .collapse-widget-title {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  font-size: 18px;
+  border-bottom: 1px solid #EDE3E3;
+  cursor: pointer;
+}
+.ts-faq-left-content .collapse-widget .collapse-widget-title::before {
+  position: absolute;
+  content: "\ea4a";
+  right: 0;
+  top: 1.5px;
+  font-family: boxicons;
+  color: #656262;
+  transition: var(--transition);
+}
+.ts-faq-left-content .collapse-widget .collapse-widget-title.active::before {
+  content: "\ea57";
+}
+.ts-faq-left-content .widget_categories .ts-categories-list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-faq-left-content .widget_categories .ts-categories-list li {
+  list-style-type: none;
+}
+.ts-faq-left-content .widget_categories .ts-categories-list li a {
+  font-weight: 500;
+  font-size: 14px;
+  color: #656262;
+  display: inline-block;
+  padding: 18px 20px;
+  width: 100%;
+}
+.ts-faq-left-content .widget_categories .ts-categories-list li a span {
+  color: #AEAEAE;
+  transition: var(--transition);
+}
+.ts-faq-left-content .widget_categories .ts-categories-list li a:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+.ts-faq-left-content .widget_categories .ts-categories-list li a.active {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.ts-faq-accordion h3 {
+  color: #161414;
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 35px;
+}
+.ts-faq-accordion .accordion {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-faq-accordion .accordion .accordion-item {
+  list-style-type: none;
+  border: none;
+  margin-bottom: 30px;
+}
+.ts-faq-accordion .accordion .accordion-item:last-child {
+  margin-bottom: 0;
+}
+.ts-faq-accordion .accordion .accordion-item .accordion-title {
+  position: relative;
+  color: #161414;
+  font-weight: 600;
+  padding: 1px 1px 1px 30px;
+}
+.ts-faq-accordion .accordion .accordion-item .accordion-title::before {
+  position: absolute;
+  content: "\ea4a";
+  font-family: boxicons;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  border-radius: 5px;
+  background: linear-gradient(270deg, #FF869E 0%, #FDAB79 100%);
+  text-align: center;
+  color: var(--white-color);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ts-faq-accordion .accordion .accordion-item .accordion-title.active::before {
+  content: "\ea57";
+  background: #BCBCBC;
+}
+.ts-faq-accordion .accordion .accordion-item .accordion-content {
+  margin-top: 20px;
+  display: none;
+}
+.ts-faq-accordion .accordion .accordion-item .accordion-content.show {
+  display: block;
+}
+
+.ts-faq-accordion-line {
+  position: relative;
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 45px;
+}
+.ts-faq-accordion-line::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #EDE3E3;
+  height: 1px;
+  width: 100%;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .ts-faq-left-content {
+    padding-right: 0;
+    margin-bottom: 25px;
+  }
+  .ts-faq-accordion h3 {
+    font-size: 20px;
+  }
+  .ts-faq-accordion .accordion .accordion-item .accordion-title {
+    display: flex;
+    align-items: center;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-faq-left-content {
+    padding-right: 0;
+    margin-bottom: 25px;
+  }
+}/*# sourceMappingURL=faq.css.map */

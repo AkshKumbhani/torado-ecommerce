@@ -1,0 +1,257 @@
+/*================================================
+Contact Us Area CSS
+=================================================*/
+.ts-contact-us-inner {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.ts-contact-us-form h3 {
+  font-weight: 500;
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+.ts-contact-us-form h3 span {
+  font-weight: 900;
+}
+.ts-contact-us-form .form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+.ts-contact-us-form .form-group label {
+  color: #161414;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+}
+.ts-contact-us-form .form-group label span {
+  color: var(--main-color);
+}
+.ts-contact-us-form .form-group .form-control {
+  display: inline-block;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #ECE1DE;
+  background-color: var(--white-color);
+  border-radius: 50px;
+  padding: 15px 20px;
+  outline: 0;
+  box-shadow: unset;
+  letter-spacing: 0.02em;
+  color: #A7A7A7;
+  font-weight: 300;
+  font-size: 15px;
+  transition: var(--transition);
+}
+.ts-contact-us-form .form-group .form-control::-moz-placeholder {
+  color: #A7A7A7;
+  -moz-transition: var(--transition);
+  transition: var(--transition);
+}
+.ts-contact-us-form .form-group .form-control::placeholder {
+  color: #A7A7A7;
+  transition: var(--transition);
+}
+.ts-contact-us-form .form-group .form-control:focus {
+  border: 1px solid var(--main-color);
+}
+.ts-contact-us-form .form-group .form-control:focus::-moz-placeholder {
+  color: transparent;
+}
+.ts-contact-us-form .form-group .form-control:focus::placeholder {
+  color: transparent;
+}
+.ts-contact-us-form .form-group textarea.form-control {
+  min-height: 135px;
+  border-radius: 10px;
+}
+.ts-contact-us-form .form-cookies-consent {
+  margin-bottom: 0;
+}
+.ts-contact-us-form .form-cookies-consent a {
+  color: var(--main-color);
+}
+.ts-contact-us-form .form-cookies-consent [type=checkbox]:checked, .ts-contact-us-form .form-cookies-consent [type=checkbox]:not(:checked) {
+  display: none;
+}
+.ts-contact-us-form .form-cookies-consent [type=checkbox]:checked + label, .ts-contact-us-form .form-cookies-consent [type=checkbox]:not(:checked) + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  color: #676767;
+  font-weight: 400;
+  font-size: 14px;
+}
+.ts-contact-us-form .form-cookies-consent [type=checkbox]:checked + label:before, .ts-contact-us-form .form-cookies-consent [type=checkbox]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid var(--black-color);
+}
+.ts-contact-us-form .form-cookies-consent [type=checkbox]:checked + label:after, .ts-contact-us-form .form-cookies-consent [type=checkbox]:not(:checked) + label:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--black-color);
+  border-radius: 50px;
+  position: absolute;
+  top: 7.5px;
+  left: 5px;
+  transition: all 0.2s ease;
+}
+.ts-contact-us-form .form-cookies-consent [type=checkbox]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.ts-contact-us-form .form-cookies-consent [type=checkbox]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.ts-contact-us-form .form-cookies-consent [type=checkbox]:hover + label:before {
+  border-color: var(--main-color);
+}
+.ts-contact-us-form .form-cookies-consent [type=checkbox]:checked + label:before {
+  border-color: var(--main-color);
+}
+.ts-contact-us-form .list-unstyled li {
+  font-size: 15px;
+  color: var(--main-color);
+  margin-top: 10px;
+}
+.ts-contact-us-form .text-danger {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+.ts-contact-us-form .ts-default-btn {
+  border: none;
+  padding: 18px 75px;
+}
+
+.ts-contact-us-info {
+  padding-left: 80px;
+}
+.ts-contact-us-info .content {
+  margin-bottom: 50px;
+}
+.ts-contact-us-info .content:last-child {
+  margin-bottom: 0;
+}
+.ts-contact-us-info .content h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.ts-contact-us-info .content span {
+  color: #625E5E;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 5px;
+}
+.ts-contact-us-info .content span:last-child {
+  margin-bottom: 0;
+}
+.ts-contact-us-info .content span a {
+  color: #625E5E;
+}
+.ts-contact-us-info .content span a:hover {
+  color: var(--main-color);
+}
+.ts-contact-us-info .content span b {
+  color: #625E5E;
+  font-weight: 700;
+}
+.ts-contact-us-info .content .list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-contact-us-info .content .list li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.ts-contact-us-info .content .list li:last-child {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.ts-contact-us-info .content .list li a {
+  color: #625E5E;
+  font-weight: 300;
+}
+.ts-contact-us-info .content .list li a:hover {
+  color: var(--main-color);
+}
+.ts-contact-us-info .content .em-social {
+  padding-left: 0;
+  margin: 0;
+}
+.ts-contact-us-info .content .em-social li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+.ts-contact-us-info .content .em-social li:last-child {
+  margin-right: 0;
+}
+.ts-contact-us-info .content .em-social li a i {
+  font-size: 20px;
+  color: var(--main-color);
+  transition: var(--transition);
+}
+.ts-contact-us-info .content .em-social li a i:hover {
+  color: var(--black-color);
+}
+
+/*================================================
+Map Area CSS
+=================================================*/
+.ts-map-area {
+  overflow: hidden;
+}
+.ts-map-area .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ts-map iframe {
+  width: 100%;
+  margin-bottom: -10px;
+  height: 485px;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .ts-contact-us-form h3 {
+    font-size: 25px;
+  }
+  .ts-contact-us-info {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-contact-us-form h3 {
+    font-size: 30px;
+  }
+  .ts-contact-us-info {
+    padding-left: 0;
+    margin-top: 30px;
+  }
+}
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ts-contact-us-info {
+    padding-left: 30px;
+  }
+}/*# sourceMappingURL=contact.css.map */

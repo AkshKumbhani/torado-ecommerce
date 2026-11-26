@@ -1,0 +1,1059 @@
+/* ============================================================
+   Shop All For Men Page Styles (Torado Template Matching)
+   ============================================================ */
+
+.shop-all-for-men-page {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #ffffff;
+}
+
+/* 1. Page Header Banner matching Screenshot 1 */
+.men-banner-area {
+  background: #FFA1A9;
+  background: linear-gradient(135deg, #FFB4B9 0%, #FF9098 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 85px 0 85px;
+  text-align: center;
+  z-index: 1;
+}
+
+.men-banner-area::before {
+  content: "";
+  position: absolute;
+  left: 14%;
+  top: -30px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.men-banner-area::after {
+  content: "";
+  position: absolute;
+  right: 12%;
+  bottom: -30px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.men-banner-content .men-banner-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.men-banner-content .men-breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.men-banner-content .men-breadcrumb li a {
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.men-banner-content .men-breadcrumb li a:hover {
+  color: #FE4267;
+}
+
+.men-banner-content .men-breadcrumb .sep {
+  color: #555555;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.men-banner-content .men-breadcrumb .active {
+  color: #222222;
+}
+
+/* 2. Container & Spacing */
+.custom-pad {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+@media (max-width: 991px) {
+  .custom-pad {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.pt-70 {
+  padding-top: 70px;
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+/* 3. Left Sidebar Filter Styles */
+.sticky-sidebar {
+  position: sticky;
+  top: 100px;
+  padding-right: 10px;
+}
+
+.shop-sidebar-wrap {
+  background: #ffffff;
+}
+
+.sidebar-header {
+  padding-bottom: 20px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.sidebar-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.clear-filters-btn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #FE4267;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.clear-filters-btn:hover {
+  color: #d12248;
+}
+
+/* Filter Blocks */
+.filter-block {
+  margin-bottom: 25px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.filter-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 18px;
+}
+
+.filter-title span {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.filter-title i {
+  font-size: 20px;
+  color: #666666;
+  transition: transform 0.2s ease;
+}
+
+/* Categories List */
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories-list li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: 14.5px;
+  color: #444444;
+}
+
+.categories-list li .cat-name {
+  color: #2b2b2b;
+  font-weight: 500;
+}
+
+.categories-list li .cat-count {
+  color: #888888;
+  font-size: 13.5px;
+}
+
+.categories-list li:hover .cat-name,
+.categories-list li.active .cat-name {
+  color: #FE4267;
+  font-weight: 600;
+}
+
+.categories-list li.active .cat-count {
+  color: #FE4267;
+}
+
+/* Filter Options (Radios / Checkboxes) */
+.filter-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.filter-radio-row {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  user-select: none;
+}
+
+.filter-radio-row input[type="checkbox"],
+.filter-radio-row input[type="radio"] {
+  display: none;
+}
+
+.filter-radio-row .custom-radio {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #FFEBEB;
+  border: 1px solid #FFD0D0;
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.filter-radio-row .custom-radio.checked {
+  background: #FE4267;
+  border-color: #FE4267;
+}
+
+.filter-radio-row .custom-radio.checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.filter-radio-row .option-name {
+  font-size: 14.5px;
+  color: #333333;
+  font-weight: 500;
+  margin-right: 6px;
+}
+
+.filter-radio-row .option-count {
+  font-size: 13.5px;
+  color: #888888;
+}
+
+.filter-radio-row:hover .option-name {
+  color: #FE4267;
+}
+
+.show-more-btn {
+  background: none;
+  border: none;
+  color: #FE4267;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 0 0 0;
+  text-align: left;
+  transition: opacity 0.2s ease;
+}
+
+.show-more-btn:hover {
+  opacity: 0.8;
+}
+
+/* Color Swatches Grid */
+.color-swatches-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.color-swatch-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.color-swatch-circle:hover {
+  transform: scale(1.15);
+}
+
+.color-swatch-circle.active {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #FE4267;
+}
+
+/* Size Boxes */
+.size-selector-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.size-box-btn {
+  min-width: 40px;
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid #E5E5E5;
+  background: #ffffff;
+  color: #222222;
+  font-size: 12.5px;
+  font-weight: 600;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.size-box-btn:hover {
+  border-color: #111111;
+  background: #f8f8f8;
+}
+
+.size-box-btn.active {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+/* Price Range */
+.price-range-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price-inputs-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.price-input-box {
+  flex: 1;
+}
+
+.price-input-box label {
+  font-size: 12.5px;
+  color: #666666;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.input-group-custom {
+  display: flex;
+  align-items: center;
+  border: 1px solid #E5E5E5;
+  padding: 5px 8px;
+  background: #ffffff;
+}
+
+.input-group-custom span {
+  font-size: 13.5px;
+  color: #666666;
+  margin-right: 3px;
+  font-weight: 500;
+}
+
+.input-group-custom input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #222222;
+  background: transparent;
+}
+
+.price-dash {
+  font-size: 16px;
+  color: #888888;
+  margin-bottom: 6px;
+}
+
+.price-slider {
+  width: 100%;
+  accent-color: #FE4267;
+  cursor: pointer;
+}
+
+/* Reviews Stars */
+.rating-row .stars-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-right: 6px;
+}
+
+.rating-row .star-filled {
+  color: #FFB300;
+  font-size: 16px;
+}
+
+.rating-row .star-empty {
+  color: #E0E0E0;
+  font-size: 16px;
+}
+
+.rating-label {
+  font-size: 13.5px;
+  color: #555555;
+  font-weight: 500;
+}
+
+/* Tags List */
+.tags-badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tag-pill-btn {
+  background: #F4F4F4;
+  border: 1px solid transparent;
+  color: #555555;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag-pill-btn:hover {
+  background: #e8e8e8;
+  color: #111111;
+}
+
+.tag-pill-btn.active {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* 4. Top Controls Bar */
+.grid-heading {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.results-text {
+  font-size: 13.5px;
+  color: #777777;
+}
+
+.results-text b {
+  color: #222222;
+  font-weight: 600;
+}
+
+.custom-sorting-select {
+  border: 1px solid #E5E5E5;
+  background-color: #F8F8F8;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #333333;
+  padding: 7px 32px 7px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 170px;
+}
+
+.custom-sorting-select:focus {
+  border-color: #FE4267;
+  box-shadow: none;
+}
+
+.mobile-filter-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 7px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 5. Product & Promo Cards - Exact Proportions matching Screenshot 1, 2, 3 */
+.ts-men-card-item {
+  background: #ffffff;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ts-men-card-item:hover {
+  transform: translateY(-4px);
+}
+
+.men-card-media {
+  position: relative;
+  background: #F4F4F4;
+  overflow: hidden;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px 15px 15px;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.men-card-media a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.men-card-media img {
+  max-height: 210px;
+  max-width: 90%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.ts-men-card-item:hover .men-card-media img {
+  transform: scale(1.06);
+}
+
+/* Badges */
+.card-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  z-index: 2;
+  letter-spacing: 0.2px;
+}
+
+.badge-best-seller {
+  background: #E83F26;
+}
+
+.badge-new {
+  background: #111111;
+}
+
+/* Heart Wishlist Button matching Screenshot 2 */
+.card-wishlist-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #EDEDED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 0.2s ease;
+}
+
+.card-wishlist-btn i {
+  font-size: 18px;
+  color: #444444;
+  transition: color 0.2s ease;
+}
+
+.card-wishlist-btn:hover {
+  background: #FE4267;
+  border-color: #FE4267;
+}
+
+.card-wishlist-btn:hover i {
+  color: #ffffff;
+}
+
+.card-wishlist-btn.active i {
+  color: #FE4267;
+}
+
+/* Quick Add Bar Button matching Screenshot 2 */
+.card-quick-add-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.quick-add-btn {
+  width: 100%;
+  height: 44px;
+  background: #1a1a1a;
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quick-add-btn:hover {
+  background: #FE4267;
+}
+
+/* Card Size Action Bar matching Screenshot 3 */
+.card-size-action-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ECECEC;
+  z-index: 3;
+  transition: all 0.25s ease;
+}
+
+.card-size-action-bar.hover-visible {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.ts-men-card-item:hover .card-size-action-bar.hover-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-size-action-bar.always-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-size-action-bar .size-btn {
+  flex: 1;
+  height: 42px;
+  background: #ffffff;
+  border: none;
+  border-right: 1px solid #ECECEC;
+  font-size: 12px;
+  font-weight: 700;
+  color: #111111;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.card-size-action-bar .size-btn:last-child {
+  border-right: none;
+}
+
+.card-size-action-bar .size-btn:hover,
+.card-size-action-bar .size-btn.selected {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* Product Content */
+.men-card-content {
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.product-name a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.product-name a:hover {
+  color: #FE4267;
+}
+
+.product-category {
+  font-size: 13px;
+  color: #888888;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #FE4267;
+}
+
+/* 6. Promo Banner Cards - Exact Screenshot 1 & Screenshot 2 Matching */
+
+/* Promo Card 1: Double-width 2-columns (Screenshot 1: 30% OFF) */
+.promo-card-light {
+  background: #F4F4F4;
+  border-radius: 4px;
+  height: 290px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 25px 20px 35px;
+}
+
+.promo-left-text {
+  z-index: 2;
+  max-width: 48%;
+}
+
+.promo-tag {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111111;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.promo-bold-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: #111111;
+  line-height: 1.15;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.5px;
+  border-bottom: 2px solid #111111;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.promo-discount-num {
+  font-size: 48px;
+  font-weight: 900;
+  color: #111111;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.promo-discount-off {
+  font-size: 38px;
+  font-weight: 900;
+  color: #111111;
+  line-height: 1;
+  letter-spacing: -1px;
+  border-bottom: 3px solid #111111;
+  padding-bottom: 6px;
+  display: inline-block;
+}
+
+.promo-right-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 58%;
+  overflow: hidden;
+}
+
+.promo-right-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Promo Card 2: 1-column Men Fashion Banner matching Screenshot 2 using man-off-2.jpg */
+.promo-card-image-only {
+  background: #0E131F;
+  border-radius: 4px;
+  height: 290px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.promo-card-image-only a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.promo-card-image-only img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s ease;
+}
+
+.promo-card-image-only:hover img {
+  transform: scale(1.05);
+}
+
+/* 7. Pagination matching Screenshot 7 & 8 */
+.men-pagination-area {
+  margin-top: 50px;
+}
+
+.pagination-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.page-nav-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #FF8E9C;
+  background: #ffffff;
+  color: #FE4267;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-nav-arrow:hover:not(:disabled) {
+  background: #FE4267;
+  color: #ffffff;
+}
+
+.page-nav-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-num-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #F4F4F4;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.page-num-btn:hover {
+  background: #e4e4e4;
+}
+
+.page-num-btn.active {
+  background: #E83F26;
+  color: #ffffff;
+}
+
+/* 8. Mobile Filter Off-Canvas Drawer */
+.mobile-filter-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 320px;
+  max-width: 85vw;
+  background: #ffffff;
+  z-index: 1050;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-filter-drawer.active {
+  transform: translateX(0);
+}
+
+.mobile-filter-header {
+  padding: 16px 18px;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.mobile-filter-header h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.close-drawer-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333333;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-filter-body {
+  padding: 18px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.mobile-filter-footer {
+  padding: 14px 18px;
+  border-top: 1px solid #EDEDED;
+  background: #ffffff;
+}
+
+.btn-apply-filters {
+  background: #FE4267;
+  color: #ffffff;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-apply-filters:hover {
+  background: #d82b4f;
+}
+
+.mobile-filter-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+}
+
+/* ============================================================
+   Mobile Responsive Styles (max-width: 767px) - Exact Reference Match
+   ============================================================ */
+@media (max-width: 767px) {
+  /* 1. Page Header Banner */
+  .men-banner-area {
+    background: linear-gradient(270deg, #FF869E 0%, rgba(253, 171, 121, 0.5) 100%) !important;
+    padding: 45px 0 40px !important;
+  }
+
+  .men-banner-area::before {
+    left: -20px;
+    top: -25px;
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.12) 100%);
+  }
+
+  .men-banner-area::after {
+    right: -15px;
+    bottom: -15px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+  }
+
+  .men-banner-content .men-banner-title {
+    font-size: 22px !important;
+    font-weight: 800;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+  }
+
+  .men-banner-content .men-breadcrumb {
+    font-size: 13px !important;
+    gap: 8px;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .men-banner-content .men-breadcrumb .sep {
+    font-size: 11px;
+  }
+
+  /* 2. Shop Container & Sidebar Spacing */
+  .shop-all-for-men-page .men-shop-container {
+    padding-top: 25px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .sidebar-header {
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+
+  .sidebar-title {
+    font-size: 20px;
+  }
+}

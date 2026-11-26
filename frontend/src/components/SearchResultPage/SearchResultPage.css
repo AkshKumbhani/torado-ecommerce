@@ -1,0 +1,462 @@
+/* ============================================================
+   Search Result Page - Torado Tee Store
+   ============================================================ */
+
+.torado-search-result-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 1. Page Banner */
+.tsr-page-banner {
+  background: linear-gradient(270deg, #FF869E 0%, rgba(253,171,121,0.5) 100%);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding: 85px 0 80px;
+}
+.tsr-page-banner::before {
+  position: absolute;
+  content: "";
+  left: 15%;
+  top: -30px;
+  height: 140px;
+  width: 140px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  z-index: -1;
+}
+.tsr-page-banner::after {
+  position: absolute;
+  content: "";
+  right: 12%;
+  bottom: 20px;
+  width: 110px;
+  height: 110px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  z-index: -1;
+}
+.tsr-banner-content h2 {
+  font-size: 40px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 12px;
+}
+.tsr-banner-content h2 strong {
+  font-weight: 900;
+}
+.tsr-breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.tsr-breadcrumb li {
+  color: #3F3F3F;
+  font-weight: 500;
+  font-size: 15px;
+}
+.tsr-breadcrumb li a {
+  color: #3F3F3F;
+  transition: var(--transition);
+}
+.tsr-breadcrumb li a:hover {
+  color: var(--main-color);
+}
+.tsr-breadcrumb li.sep {
+  font-size: 13px;
+  color: #555;
+}
+.tsr-breadcrumb li.active {
+  color: #111;
+  font-weight: 600;
+}
+
+/* 2. Products Section */
+.tsr-products-area {
+  padding: 90px 0 100px;
+}
+
+/* Toolbar */
+.tsr-toolbar {
+  border-bottom: 1px solid #F0F0F0;
+  padding-bottom: 24px;
+}
+.tsr-collection-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+}
+.tsr-results-count {
+  font-size: 14px;
+  color: #777;
+}
+.tsr-sorting-select select {
+  height: 44px;
+  border-radius: 50px;
+  border: 1px solid #EBEBEB;
+  padding: 0 36px 0 20px;
+  font-size: 14px;
+  color: #444;
+  background-color: #FAFAFA;
+  cursor: pointer;
+  outline: none;
+}
+.tsr-sorting-select select:focus {
+  border-color: var(--main-color);
+}
+
+/* Product Card */
+.tsr-product-card {
+  transition: var(--transition);
+}
+.tsr-product-img-wrap {
+  position: relative;
+  background: #F6F6F6;
+  border-radius: 6px;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 290px;
+  overflow: hidden;
+}
+.tsr-product-img-wrap img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+.tsr-product-card:hover .tsr-product-img-wrap img {
+  transform: scale(1.06);
+}
+
+/* Floating Actions */
+.tsr-action-buttons {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: var(--transition);
+  z-index: 2;
+}
+.tsr-product-card:hover .tsr-action-buttons,
+.tsr-product-card.is-active .tsr-action-buttons {
+  opacity: 1;
+  transform: translateX(0);
+}
+.tsr-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #EFEFEF;
+  color: #444;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+.tsr-action-btn:hover {
+  background: var(--main-color);
+  color: #ffffff;
+  border-color: var(--main-color);
+}
+
+/* Quick Add Button */
+.tsr-quick-add-btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 12px 0;
+  background: #111111;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+.tsr-product-card:hover .tsr-quick-add-btn,
+.tsr-product-card.is-active .tsr-quick-add-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tsr-quick-add-btn:hover {
+  background: var(--main-color);
+}
+
+/* Product Info */
+.tsr-product-info {
+  padding-top: 16px;
+}
+.tsr-product-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.tsr-product-title a {
+  color: #111;
+  transition: var(--transition);
+}
+.tsr-product-title a:hover {
+  color: var(--main-color);
+}
+.tsr-product-cat {
+  display: block;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 8px;
+}
+.tsr-product-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--main-color);
+}
+
+/* Load More Button */
+.tsr-load-more-btn {
+  padding: 16px 48px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* ============================================================
+   Mobile Responsive Styles - matches torado.envytheme.com reference
+   ============================================================ */
+
+/* ── max 767px (Mobile) ─────────────────────────── */
+@media (max-width: 767px) {
+
+  /* Page Banner */
+  .tsr-page-banner {
+    padding: 45px 0 40px;
+  }
+  .tsr-banner-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .tsr-breadcrumb li {
+    font-size: 13px;
+  }
+
+  /* Products section padding */
+  .tsr-products-area {
+    padding: 36px 0 48px;
+  }
+
+  /* Toolbar: stacks on mobile */
+  .tsr-toolbar {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding-bottom: 16px;
+    margin-bottom: 20px !important;
+  }
+  .tsr-collection-title {
+    font-size: 18px;
+  }
+  .tsr-toolbar-right {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .tsr-results-count {
+    font-size: 13px;
+  }
+  .tsr-sorting-select {
+    width: 100%;
+  }
+  .tsr-sorting-select select {
+    width: 100%;
+    height: 40px;
+    padding: 0 24px 0 14px;
+    font-size: 13px;
+  }
+
+  /* ── Product Grid: 1 column full-width ── */
+  .torado-search-result-page .row.g-4 > [class*='col-'] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* ── Product Card: vertical, image on top ── */
+  .tsr-product-card {
+    display: block;           /* vertical stacking */
+    background: #ffffff;
+    border-radius: 0;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+
+  /* ── Image wrapper: full-width, tall enough to show product ── */
+  .tsr-product-img-wrap {
+    width: 100%;
+    min-height: 260px;
+    padding: 28px 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .tsr-product-img-wrap img {
+    max-height: 200px;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+  }
+
+  /* ── Floating action buttons: hidden until click / active / hover ── */
+  .tsr-action-buttons {
+    opacity: 0;
+    transform: translateX(20px);
+    top: 12px;
+    right: 12px;
+    gap: 8px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  .tsr-product-card:hover .tsr-action-buttons,
+  .tsr-product-card.is-active .tsr-action-buttons {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  .tsr-action-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  /* ── Quick Add button: hidden until click / active / hover ── */
+  .tsr-quick-add-btn {
+    opacity: 0;
+    transform: translateY(100%);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0 0 6px 6px;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  .tsr-product-card:hover .tsr-quick-add-btn,
+  .tsr-product-card.is-active .tsr-quick-add-btn {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* ── Product Info: below image ── */
+  .tsr-product-info {
+    padding-top: 14px;
+    padding-bottom: 4px;
+  }
+  .tsr-product-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+  .tsr-product-title a {
+    color: #111111;
+  }
+  .tsr-product-cat {
+    display: block;
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 7px;
+  }
+  .tsr-product-price {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--main-color);
+  }
+
+  /* Load More button full-width */
+  .tsr-load-more-btn {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 14px;
+    border-radius: 50px;
+  }
+}
+
+/* ── max 400px (very small phones) ─────────────── */
+@media (max-width: 400px) {
+  .tsr-product-img-wrap {
+    min-height: 220px;
+    padding: 20px 16px;
+  }
+  .tsr-product-img-wrap img {
+    max-height: 170px;
+  }
+  .tsr-product-title {
+    font-size: 15px;
+  }
+}
+
+/* ── 768–991px (Tablet) ─────────────────────────── */
+@media (min-width: 768px) and (max-width: 991px) {
+  .tsr-product-img-wrap {
+    min-height: 230px;
+    padding: 22px 16px;
+  }
+  .tsr-product-img-wrap img {
+    max-height: 175px;
+  }
+  .tsr-action-buttons {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  .tsr-product-card:hover .tsr-action-buttons,
+  .tsr-product-card.is-active .tsr-action-buttons {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  .tsr-quick-add-btn {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  .tsr-product-card:hover .tsr-quick-add-btn,
+  .tsr-product-card.is-active .tsr-quick-add-btn {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .tsr-toolbar {
+    flex-wrap: wrap;
+  }
+}

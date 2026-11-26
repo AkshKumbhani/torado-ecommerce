@@ -1,0 +1,572 @@
+/*================================================
+TS Customize Area CSS
+=================================================*/
+.ts-customize-area {
+  background: #242121;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 90px;
+}
+
+.ts-customize-area .container-fluid {
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.ts-customize-area .ts-section-title h2 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.ts-customize-area .ts-section-title p {
+  color: #B0B0B0;
+  max-width: 665px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Background floating ambient glow */
+.ts-customize-area::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 320px;
+  height: 320px;
+  background: linear-gradient(241.45deg, rgba(255, 255, 255, 0.05) 12.37%, rgba(255, 255, 255, 0.05) 88.85%);
+  border-radius: 50%;
+  z-index: -1;
+  top: -80px;
+  right: 140px;
+}
+
+.ts-customize-area::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 240px;
+  height: 240px;
+  background: linear-gradient(241.45deg, rgba(254, 66, 103, 0.04) 12.37%, rgba(252, 138, 69, 0.04) 88.85%);
+  border-radius: 50%;
+  z-index: -1;
+  bottom: 60px;
+  left: 80px;
+}
+
+/* Main showcase row */
+.ts-customize-main-row {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* Side decorative designs */
+.ts-customize-list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.ts-customize-list li {
+  list-style-type: none;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.ts-customize-list li:hover {
+  transform: translateY(-6px) scale(1.04);
+}
+
+.ts-customize-list .design-card img {
+  max-width: 155px;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+/* Center Interactive Showcase */
+.ts-customize-center-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+}
+
+.ts-customize-main-image {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.custom-preview-img {
+  max-height: 490px;
+  width: auto;
+  margin: 0 auto;
+  display: inline-block;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.6));
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.custom-preview-img.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* Navigation Arrow Buttons */
+.customize-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  background: #3B3636;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  padding: 0;
+}
+
+.customize-nav-btn.prev-btn {
+  left: 20px;
+}
+
+.customize-nav-btn.next-btn {
+  right: 20px;
+}
+
+.customize-nav-btn:hover {
+  background: #000000;
+  border-color: #FE4267;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.customize-nav-btn i {
+  font-size: 18px;
+  background: linear-gradient(270deg, #FE4267 0%, #FC8A45 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Full-width Bottom Control & Info Bar */
+.ts-customize-content {
+  margin-top: 50px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.ts-customize-content .content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.ts-customize-content .content h3 a {
+  color: #ffffff;
+}
+
+.ts-customize-content .content .price {
+  font-weight: 600;
+  font-size: 20px;
+  color: #FE4267;
+  display: block;
+}
+
+/* Color Swatches / Thumbnails */
+.thumbs-wrap ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.thumbs-wrap ul li {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbs-wrap ul li .color-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.thumbs-wrap ul li:hover .color-dot {
+  transform: scale(1.2);
+}
+
+.thumbs-wrap ul li.active .color-dot {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 2.5px #ffffff, 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+/* Order Now Pill Button */
+.ts-customize-content .customize-btn .ts-optional-btn {
+  color: #ffffff !important;
+  border: 1.5px solid #FE4267;
+  background: transparent;
+  padding: 14px 38px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.ts-customize-content .customize-btn .ts-optional-btn i {
+  font-size: 19px;
+  transition: transform 0.3s ease;
+}
+
+.ts-customize-content .customize-btn .ts-optional-btn:hover {
+  background: linear-gradient(270deg, #FE4267 0%, #FC8A45 100%);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(254, 66, 103, 0.4);
+  transform: translateY(-2px);
+}
+
+.ts-customize-content .customize-btn .ts-optional-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* Shape decoration */
+.ts-customize-shape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .ts-customize-list .design-card img {
+    max-width: 110px;
+  }
+}
+
+@media (max-width: 991px) {
+  .customize-nav-btn.prev-btn {
+    left: 0;
+  }
+  .customize-nav-btn.next-btn {
+    right: 0;
+  }
+  .custom-preview-img {
+    max-height: 350px;
+  }
+  .ts-customize-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+  }
+}
+
+/* Tablet Responsive (768px - 991px): Perfect centering and spacing for color dots */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-customize-area {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .ts-customize-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-top: 35px;
+    gap: 20px;
+    width: 100%;
+  }
+  .ts-customize-content .content {
+    text-align: center !important;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .ts-customize-content .content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #ffffff;
+  }
+  .ts-customize-content .content .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #FE4267;
+    margin-bottom: 0;
+  }
+  .ts-customize-content .thumbs-wrap {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto;
+  }
+  .ts-customize-content .thumbs-wrap ul {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    list-style: none;
+  }
+  .ts-customize-content .thumbs-wrap ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin: 0;
+    cursor: pointer;
+  }
+  .ts-customize-content .thumbs-wrap ul li .color-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.25s ease;
+  }
+  .ts-customize-content .thumbs-wrap ul li:hover .color-dot {
+    transform: scale(1.15);
+  }
+  .ts-customize-content .thumbs-wrap ul li.active .color-dot {
+    width: 22px;
+    height: 22px;
+    transform: none;
+    box-shadow: 0 0 0 3px #ffffff, 0 0 10px rgba(255, 255, 255, 0.4);
+    border-color: #ffffff;
+  }
+  .ts-customize-content .customize-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ts-customize-area {
+    padding-top: 50px !important;
+    padding-bottom: 45px !important;
+  }
+
+  .ts-customize-area .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .ts-customize-area .ts-section-title {
+    margin-bottom: 20px !important;
+  }
+
+  .ts-customize-area .ts-section-title h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .ts-customize-area .ts-section-title p {
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 0 5px;
+    color: #B0B0B0;
+  }
+
+  .ts-customize-main-row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .ts-customize-badges-mobile .ts-customize-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .ts-customize-badges-mobile .ts-customize-list li {
+    margin: 0;
+  }
+
+  .ts-customize-badges-mobile .design-card img {
+    max-width: 95px;
+    height: auto;
+  }
+
+  .ts-customize-center {
+    margin-bottom: 0;
+  }
+
+  .ts-customize-center-wrapper {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 5px 0;
+    margin: 0;
+  }
+
+  .ts-customize-main-image {
+    padding: 0;
+    margin: 0;
+  }
+
+  .custom-preview-img {
+    max-height: 220px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .customize-nav-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+    background: #413C3C;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customize-nav-btn.prev-btn {
+    left: 8px;
+  }
+
+  .customize-nav-btn.next-btn {
+    right: 8px;
+  }
+
+  .ts-customize-content {
+    flex-direction: column;
+    align-items: flex-start !important;
+    text-align: left;
+    gap: 8px;
+    margin-top: 5px !important;
+    padding: 0 5px;
+  }
+
+  .ts-customize-content .content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .ts-customize-content .content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #ffffff;
+  }
+
+  .ts-customize-content .content .price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-bottom: 8px;
+  }
+
+  .ts-customize-content .thumbs-wrap {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .ts-customize-content .thumbs-wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ts-customize-content .thumbs-wrap ul {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 4px 0 12px;
+  }
+
+  .ts-customize-content .thumbs-wrap ul li {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .ts-customize-content .thumbs-wrap ul li .color-dot {
+    position: static;
+    display: block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .ts-customize-content .thumbs-wrap ul li.active .color-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px #ffffff;
+  }
+
+  .ts-customize-content .customize-btn {
+    margin-top: 8px;
+    width: auto;
+  }
+
+  .ts-customize-content .customize-btn .ts-optional-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: auto;
+    height: 42px;
+    padding: 0 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    border: 1.5px solid var(--main-color);
+    background: transparent;
+    color: #ffffff !important;
+  }
+}
+
+/* Laptop Responsive Fix (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ts-customize-area {
+    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

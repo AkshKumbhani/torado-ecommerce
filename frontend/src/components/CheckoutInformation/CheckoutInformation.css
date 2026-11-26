@@ -1,0 +1,425 @@
+﻿/*================================================
+TS Checkout Information Area CSS (Exact Torado Match)
+=================================================*/
+
+.ts-checkout-information-area {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #ffffff;
+}
+
+/* Step Meta List */
+.ts-checkout-information-inner .meta-list {
+  padding-left: 0;
+  border-bottom: 1px solid #EDE3E3;
+  margin-bottom: 45px;
+  padding-bottom: 30px;
+  list-style: none;
+}
+
+.ts-checkout-information-inner .meta-list li {
+  display: inline-block;
+  margin-right: 55px;
+  position: relative;
+}
+
+.ts-checkout-information-inner .meta-list li::before {
+  position: absolute;
+  content: ">>";
+  right: -38px;
+  top: 1px;
+  color: #202020;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.ts-checkout-information-inner .meta-list li:last-child {
+  margin-right: 0;
+}
+
+.ts-checkout-information-inner .meta-list li:last-child::before {
+  display: none;
+}
+
+.ts-checkout-information-inner .meta-list li a {
+  color: rgba(32, 32, 32, 0.5);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ts-checkout-information-inner .meta-list li a:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-checkout-information-inner .meta-list li a.active {
+  color: var(--main-color, #FE4267);
+}
+
+/* Section Headings */
+.ts-checkout-information-inner .contact-information {
+  margin-bottom: 40px;
+}
+
+.ts-checkout-information-inner .contact-information h3,
+.ts-checkout-information-inner .shipping-address h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+}
+
+/* Form Groups */
+.ts-checkout-information-inner .form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.ts-checkout-information-inner .form-group label {
+  color: #161414;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ts-checkout-information-inner .form-group label span {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-checkout-information-inner .form-group .form-control,
+.ts-checkout-information-inner .form-group .form-select {
+  width: 100%;
+  height: 56px;
+  border: 1px solid #ECE1DE;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 12px 18px;
+  outline: 0;
+  box-shadow: none;
+  font-size: 14px;
+  color: #222222;
+  transition: border-color 0.2s;
+}
+
+.ts-checkout-information-inner .form-group .form-control::placeholder {
+  color: #A7A7A7;
+}
+
+.ts-checkout-information-inner .form-group .form-control:focus,
+.ts-checkout-information-inner .form-group .form-select:focus {
+  border-color: var(--main-color, #FE4267);
+}
+
+/* Checkboxes */
+.ts-checkout-information-inner .form-cookies-consent {
+  margin-top: 12px;
+  margin-bottom: 30px;
+}
+
+.ts-checkout-information-inner .form-cookies-consent label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #555555;
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+}
+
+.ts-checkout-information-inner .form-cookies-consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--main-color, #FE4267);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Bottom Nav Buttons */
+.ts-checkout-information-inner .checkout-information-bottom {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ts-checkout-information-inner .return-to-cart-btn a {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a1a1a;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.ts-checkout-information-inner .return-to-cart-btn a i {
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.ts-checkout-information-inner .return-to-cart-btn a:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-checkout-information-inner .return-to-cart-btn a:hover i {
+  transform: translateX(-4px);
+}
+
+.ts-checkout-information-inner .checkout-information-btn .ts-default-btn {
+  height: 54px;
+  padding: 0 40px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #FC8A45 0%, #FE4267 100%);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(254, 66, 103, 0.25);
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.ts-checkout-information-inner .checkout-information-btn .ts-default-btn:hover {
+  opacity: 0.93;
+}
+
+.ts-checkout-information-inner .checkout-information-btn .ts-default-btn:active {
+  transform: scale(0.99);
+}
+
+/*================================================
+Right Column Widget Area
+=================================================*/
+.ts-checkout-information-widget-area {
+  padding-left: 45px;
+}
+
+.ts-checkout-information-widget-area .widget-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 25px;
+}
+
+/* Products in Cart */
+.ts-checkout-information-widget-area .checkout_products {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  background: #FBFBFB;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #F1F1F1;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .thumb {
+  width: 90px;
+  height: 90px;
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 5px;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .thumb img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .info .title {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .info .title a {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .info .title a:hover {
+  color: var(--main-color, #FE4267);
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .info .list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .info .list li {
+  margin-bottom: 3px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #676767;
+}
+
+.ts-checkout-information-widget-area .checkout_products .item .info .list li.price {
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a1a1a;
+  margin-top: 4px;
+}
+
+/* Coupon Search Form */
+.ts-checkout-information-widget-area .checkout_search {
+  margin-bottom: 30px;
+}
+
+.ts-checkout-information-widget-area .checkout_search .search-form {
+  position: relative;
+  display: flex;
+}
+
+.ts-checkout-information-widget-area .checkout_search .search-form .search-field {
+  height: 52px;
+  background: #ffffff;
+  border: 1px solid #ECE1DE;
+  width: 100%;
+  border-radius: 6px;
+  padding: 12px 120px 12px 18px;
+  font-size: 14px;
+  outline: 0;
+  color: #222222;
+}
+
+.ts-checkout-information-widget-area .checkout_search .search-form .search-field::placeholder {
+  color: #A7A7A7;
+}
+
+.ts-checkout-information-widget-area .checkout_search .search-form .search-field:focus {
+  border-color: var(--main-color, #FE4267);
+}
+
+.ts-checkout-information-widget-area .checkout_search .search-form button {
+  border: none;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.ts-checkout-information-widget-area .checkout_search .search-form button:hover {
+  background-color: var(--main-color, #FE4267);
+}
+
+/* Summary List */
+.ts-checkout-information-widget-area .checkout_info .list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.ts-checkout-information-widget-area .checkout_info .list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: #161414;
+}
+
+.ts-checkout-information-widget-area .checkout_info .list li .regular {
+  color: #7D7D7D;
+  font-weight: 500;
+}
+
+.ts-checkout-information-widget-area .checkout_info .list li .bold {
+  font-weight: 700;
+}
+
+.ts-checkout-information-widget-area .checkout_info .list li.total-row {
+  border-top: 1px solid #EDE3E3;
+  padding-top: 20px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.ts-checkout-information-widget-area .checkout_info .list li.total-row .total-label {
+  font-size: 18px;
+  font-weight: 800;
+  color: #161414;
+}
+
+.ts-checkout-information-widget-area .checkout_info .list li.total-row .total-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: #161414;
+}
+
+.ts-checkout-information-widget-area .checkout_info .list li.total-row .total-price span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #777;
+  margin-right: 4px;
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+  .ts-checkout-information-widget-area {
+    padding-left: 0;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ts-checkout-information-area {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .ts-checkout-information-inner .meta-list li {
+    margin-right: 30px;
+    font-size: 12px;
+  }
+  .ts-checkout-information-inner .meta-list li::before {
+    right: -20px;
+  }
+  .ts-checkout-information-inner .checkout-information-bottom {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .ts-checkout-information-inner .checkout-information-btn .ts-default-btn {
+    width: 100%;
+  }
+  .ts-checkout-information-inner .return-to-cart-btn {
+    text-align: center;
+  }
+}

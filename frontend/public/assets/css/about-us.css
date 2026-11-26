@@ -1,0 +1,191 @@
+/*================================================
+TS About Us Area CSS
+=================================================*/
+.ts-about-us-content {
+  max-width: 445px;
+}
+.ts-about-us-content h3 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.ts-about-us-content p {
+  margin-bottom: 0;
+}
+.ts-about-us-content .about-btn {
+  margin-top: 25px;
+}
+
+.ts-about-us-image {
+  position: relative;
+  filter: drop-shadow(0px 10px 50px rgba(0, 0, 0, 0.15));
+}
+.ts-about-us-image .wrap {
+  position: absolute;
+  left: 90px;
+  top: -45px;
+  right: 0;
+  text-align: center;
+}
+
+/*================================================
+TS Funfacts Area CSS
+=================================================*/
+.ts-funfacts-card {
+  margin-bottom: 25px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.ts-funfacts-card::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  background: linear-gradient(270deg, #FF869E 0%, #FDAB79 100%);
+  border-radius: 50px;
+  height: 35px;
+  width: 35px;
+  right: 40px;
+  top: -5px;
+  z-index: -1;
+}
+.ts-funfacts-card h3 {
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 1;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ts-funfacts-card h3 .odometer-formatting-mark {
+  display: none;
+}
+.ts-funfacts-card h3 .sign {
+  margin-top: -5px;
+}
+.ts-funfacts-card p {
+  letter-spacing: 0.4em;
+  color: #757171;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/*================================================
+TS Success Story Area CSS
+=================================================*/
+.ts-success-story-area {
+  overflow: hidden;
+}
+
+.ts-success-story-video {
+  position: relative;
+}
+.ts-success-story-video .video {
+  border-radius: 20px;
+}
+.ts-success-story-video .video-btn {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  background: linear-gradient(270deg, #FF869E 0%, #FDAB79 100%);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  transition: var(--transition);
+}
+.ts-success-story-video .video-btn i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: auto;
+  font-size: 55px;
+  color: var(--white-color);
+  border-radius: 5px;
+}
+.ts-success-story-video .video-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  animation: ripple 2s linear infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.75);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .ts-about-us-content {
+    max-width: 100%;
+  }
+  .ts-about-us-content h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .ts-about-us-image {
+    margin-top: 25px;
+    text-align: center;
+  }
+  .ts-about-us-image .wrap {
+    display: none;
+  }
+  .ts-funfacts-card h3 {
+    font-size: 30px;
+  }
+  .ts-funfacts-card p {
+    font-size: 14px;
+  }
+  .ts-funfacts-card::before {
+    display: none;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-about-us-content {
+    max-width: 100%;
+  }
+  .ts-about-us-content h3 {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  .ts-about-us-image {
+    margin-top: 35px;
+    text-align: center;
+  }
+  .ts-funfacts-card h3 {
+    font-size: 50px;
+  }
+}
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ts-funfacts-card h3 {
+    font-size: 60px;
+  }
+}
+/* Min width 1200px to Max width 1399px */
+/* Min width 1600px *//*# sourceMappingURL=about.css.map */

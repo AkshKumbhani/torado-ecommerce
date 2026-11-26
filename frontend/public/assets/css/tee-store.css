@@ -1,0 +1,1531 @@
+/*================================================
+Default CSS
+=================================================*/
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --font-family: "Outfit", sans-serif;
+  --main-color: #FE4267;
+  --gradient-color: linear-gradient(270deg, #FE4267 0%, #FC8A45 100%);
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --paragraph-color: #767676;
+  --font-size: 16px;
+  --transition: .6s;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button {
+  outline: 0 !important;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: var(--black-color);
+  font-weight: bold;
+}
+.h1:last-child, .h2:last-child, .h3:last-child, .h4:last-child, .h5:last-child, .h6:last-child, h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.8;
+  color: var(--paragraph-color);
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+.d-table {
+  width: 100%;
+  height: 100%;
+}
+.d-table-cell {
+  vertical-align: middle;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.ptb-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.pt-100 {
+  padding-top: 100px;
+}
+
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+.pt-75 {
+  padding-top: 75px;
+}
+
+.pb-75 {
+  padding-bottom: 75px;
+}
+
+/*================================================
+TS Default Btn CSS
+=================================================*/
+.ts-default-btn {
+  padding: 17px 40px 18.5px;
+  background: var(--gradient-color);
+  border-radius: 65px;
+  font-weight: 500;
+  color: var(--white-color) !important;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-flex;
+  justify-content: center;
+  transition: var(--transition);
+}
+.ts-default-btn i {
+  font-size: 20px;
+  line-height: 1;
+  margin-left: 5px;
+}
+.ts-default-btn::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: var(--black-color);
+  border-radius: 65px;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+.ts-default-btn:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ts-optional-btn {
+  padding: 17px 40px 18.5px;
+  background: var(--gradient-color);
+  border-radius: 65px;
+  font-weight: 500;
+  color: var(--black-color) !important;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-flex;
+  justify-content: center;
+  transition: var(--transition);
+}
+.ts-optional-btn i {
+  font-size: 20px;
+  line-height: 1;
+  margin-left: 5px;
+  transition: var(--transition);
+}
+.ts-optional-btn::after {
+  position: absolute;
+  content: "";
+  background: var(--white-color);
+  border-radius: 50px;
+  z-index: -1;
+  transition: var(--transition);
+  margin: 4px;
+  left: -2px;
+  right: -2px;
+  top: -2px;
+  bottom: -2px;
+}
+.ts-optional-btn:hover {
+  color: var(--white-color) !important;
+}
+.ts-optional-btn:hover::after {
+  background: var(--gradient-color);
+}
+.ts-optional-btn:hover i {
+  color: var(--white-color);
+}
+
+/*================================================
+TS Section Title CSS
+=================================================*/
+.ts-section-title {
+  margin-bottom: 30px;
+}
+.ts-section-title h2 {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+.ts-section-title .font-weight {
+  font-weight: 300;
+  font-size: 25px;
+}
+.ts-section-title.with-bottom-border {
+  border-bottom: 1px solid #EDEDED;
+  padding-bottom: 25px;
+  margin-bottom: 40px;
+}
+.ts-section-title.with-bottom-border .nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  border: none;
+}
+.ts-section-title.with-bottom-border .nav .nav-item {
+  display: inline-block;
+  margin-right: 100px;
+  border: none;
+}
+.ts-section-title.with-bottom-border .nav .nav-item:last-child {
+  margin-right: 0;
+}
+.ts-section-title.with-bottom-border .nav .nav-item .nav-link {
+  color: #A5A5A5;
+  font-weight: 600;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+.ts-section-title.with-bottom-border .nav .nav-item .nav-link::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: -43.5px;
+  width: 100%;
+  height: 3.5px;
+  background-color: var(--black-color);
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+}
+.ts-section-title.with-bottom-border .nav .nav-item .nav-link:hover, .ts-section-title.with-bottom-border .nav .nav-item .nav-link.active {
+  color: var(--black-color);
+}
+.ts-section-title.with-bottom-border .nav .nav-item .nav-link:hover::before, .ts-section-title.with-bottom-border .nav .nav-item .nav-link.active::before {
+  opacity: 1;
+  visibility: visible;
+}
+.ts-section-title .countdown {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-section-title .countdown li {
+  display: inline-block;
+  background: linear-gradient(270deg, rgba(255, 134, 158, 0.3) 0%, rgba(253, 171, 121, 0.3) 100%);
+  border-radius: 5px;
+  padding: 10px;
+  line-height: 1;
+  font-weight: 500;
+  margin-right: 25px;
+  position: relative;
+}
+.ts-section-title .countdown li:last-child {
+  margin-right: 0;
+}
+.ts-section-title .countdown li:last-child::before {
+  display: none;
+}
+.ts-section-title .countdown li::before {
+  position: absolute;
+  content: ":";
+  font-weight: 500;
+  right: -18px;
+  top: 0;
+  font-size: 28px;
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ts-section-title .countdown li span {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*================================================
+TS Overview Area CSS
+=================================================*/
+.ts-overview-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.ts-overview-area::before {
+  position: absolute;
+  content: "";
+  left: -195px;
+  bottom: -52px;
+  background: linear-gradient(241.45deg, rgba(255, 134, 158, 0.12) 12.37%, rgba(253, 171, 121, 0.04) 88.85%);
+  width: 680px;
+  height: 680px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.ts-overview-content {
+  max-width: 525px;
+  position: relative;
+  top: -40px;
+}
+.ts-overview-content h3 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.ts-overview-content h3 span {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ts-overview-content p {
+  margin-bottom: 18px;
+}
+.ts-overview-content .price {
+  color: #3F3F3F;
+}
+.ts-overview-content .price b {
+  color: #101010;
+  font-size: 25px;
+  font-weight: 600;
+}
+.ts-overview-content .overview-btn {
+  margin-top: 25px;
+}
+.ts-overview-content .overview-btn .ts-default-btn::before {
+  background: linear-gradient(270deg, #FF869E 0%, #FDAB79 100%);
+}
+.ts-overview-content .overview-btn .ts-default-btn:hover {
+  color: var(--black-color) !important;
+}
+
+.ts-overview-image {
+  position: relative;
+}
+.ts-overview-image .off-wrap {
+  position: absolute;
+  left: 0;
+  top: 55px;
+}
+.ts-overview-image .off-wrap::before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  height: 135px;
+  width: 135px;
+  left: 0;
+  top: -5.5px;
+  background: linear-gradient(270deg, #FE4267 0%, #FC8A45 100%);
+  box-shadow: 0px 4px 24px rgba(254, 79, 97, 0.5);
+  border-radius: 50%;
+  z-index: -1;
+}
+.ts-overview-image .off-wrap .content {
+  text-align: center;
+}
+.ts-overview-image .off-wrap .content span {
+  font-weight: 400;
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+  color: var(--white-color);
+  line-height: 1;
+}
+.ts-overview-image .off-wrap .content h2 {
+  font-size: 75px;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--white-color);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  line-height: 1;
+  margin-bottom: 2px;
+  font-weight: 900;
+}
+.ts-overview-image .off-wrap .content h3 {
+  font-size: 25px;
+  margin-bottom: 0;
+  color: var(--white-color);
+  line-height: 1;
+}
+
+.ts-overview-shape {
+  position: absolute;
+  bottom: 0;
+  left: 38%;
+  transform: translateY(-38%);
+  z-index: -1;
+}
+
+/*================================================
+TS Front & Back View Area CSS
+=================================================*/
+.ts-front-and-back-area {
+  background-color: var(--black-color);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.ts-front-and-back-area::before {
+  position: absolute;
+  content: "";
+  right: -90px;
+  bottom: -100px;
+  width: 390px;
+  height: 390px;
+  background: linear-gradient(241.45deg, rgba(255, 255, 255, 0.1) 12.37%, rgba(255, 255, 255, 0.1) 88.85%);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.ts-front-and-back-image {
+  padding-right: 150px;
+}
+
+.ts-front-and-back-content h3 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: var(--white-color);
+}
+.ts-front-and-back-content h3 span {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ts-front-and-back-content .nav {
+  padding-left: 0;
+  list-style-type: none;
+  display: block;
+  border: none;
+  margin-bottom: 30px;
+}
+.ts-front-and-back-content .nav .nav-item {
+  display: inline-block;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+.ts-front-and-back-content .nav .nav-item:last-child {
+  margin-right: 0;
+}
+.ts-front-and-back-content .nav .nav-item .nav-link {
+  color: var(--white-color);
+  padding: 18px 40px;
+  border: 1px solid #382E30;
+  background: #382E30;
+  position: relative;
+  font-weight: 500;
+  border-radius: 50px;
+}
+.ts-front-and-back-content .nav .nav-item .nav-link:hover, .ts-front-and-back-content .nav .nav-item .nav-link.active {
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+}
+.ts-front-and-back-content p {
+  color: #B0B0B0;
+  margin-bottom: 18px;
+  max-width: 520px;
+}
+.ts-front-and-back-content .price {
+  color: #B0B0B0;
+}
+.ts-front-and-back-content .price b {
+  color: var(--white-color);
+  font-size: 25px;
+  font-weight: 600;
+}
+.ts-front-and-back-content .front-and-back-btn {
+  margin-top: 30px;
+}
+.ts-front-and-back-content .front-and-back-btn .ts-default-btn::before {
+  background: linear-gradient(270deg, #FF869E 0%, #FDAB79 100%);
+}
+.ts-front-and-back-content .front-and-back-btn .ts-default-btn:hover {
+  color: var(--black-color) !important;
+}
+
+.ts-front-and-back-shape {
+  position: absolute;
+  bottom: -90px;
+  left: 42%;
+  transform: translateY(-42%);
+  z-index: -1;
+}
+
+/*================================================
+TS Customize Area CSS
+=================================================*/
+.ts-customize-area {
+  background: #242121;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.ts-customize-area .container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.ts-customize-area .ts-section-title h2 {
+  color: var(--white-color);
+  margin-bottom: 20px;
+}
+.ts-customize-area .ts-section-title p {
+  color: #B0B0B0;
+  max-width: 665px;
+  margin: auto;
+}
+.ts-customize-area::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  width: 265px;
+  height: 265px;
+  background: linear-gradient(241.45deg, rgba(255, 255, 255, 0.05) 12.37%, rgba(255, 255, 255, 0.05) 88.85%);
+  border-radius: 50%;
+  z-index: -1;
+  top: -100px;
+  right: 150px;
+}
+
+.ts-customize-list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-customize-list li {
+  list-style-type: none;
+  margin-right: 100px;
+}
+.ts-customize-list li:last-child {
+  margin-right: 0;
+}
+
+.ts-customize-content {
+  margin-top: 40px;
+}
+.ts-customize-content .content {
+  max-width: 200px;
+}
+.ts-customize-content .content h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.ts-customize-content .content h3 a {
+  color: var(--white-color);
+}
+.ts-customize-content .content span {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--main-color);
+  display: block;
+  margin-top: 12px;
+}
+.ts-customize-content .thumbs-wrap ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-customize-content .thumbs-wrap ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 25px;
+}
+.ts-customize-content .thumbs-wrap ul li:last-child {
+  margin-right: 0;
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background: #A7C5E1;
+  transition: var(--transition);
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot.two {
+  background: #C6C897;
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot.three {
+  background: #E65C4F;
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot.four {
+  background: #5D19B4;
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot.five {
+  background: #6BBD99;
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot.six {
+  background: var(--white-color);
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot.seven {
+  background: #C5FA54;
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot.eight {
+  background: #514EB5;
+}
+.ts-customize-content .thumbs-wrap ul li .color-dot.nine {
+  background: #433535;
+}
+.ts-customize-content .thumbs-wrap ul li:hover .color-dot, .ts-customize-content .thumbs-wrap ul li.active .color-dot {
+  border: 2.5px solid var(--white-color);
+}
+.ts-customize-content .customize-btn .ts-optional-btn {
+  color: var(--white-color) !important;
+}
+.ts-customize-content .customize-btn .ts-optional-btn::after {
+  background: #242121;
+}
+.ts-customize-content .customize-btn .ts-optional-btn:hover::after {
+  background: var(--gradient-color);
+}
+
+.ts-customize-slides.owl-theme .owl-nav {
+  margin-top: 0;
+}
+.ts-customize-slides.owl-theme .owl-nav [class*=owl-] {
+  display: inline-block;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: #413C3C;
+  border-radius: 50px;
+  border: none;
+  transition: var(--transition);
+  color: var(--white-color);
+  font-size: 22px;
+  position: absolute;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ts-customize-slides.owl-theme .owl-nav [class*=owl-] i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ts-customize-slides.owl-theme .owl-nav [class*=owl-].owl-next {
+  right: 80px;
+  left: auto;
+}
+.ts-customize-slides.owl-theme .owl-nav [class*=owl-]:hover {
+  background-color: var(--black-color);
+}
+.ts-customize-slides .ts-customize-image img {
+  width: auto;
+  margin: auto;
+}
+
+.ts-customize-shape {
+  position: absolute;
+  left: 100px;
+  top: 70px;
+  z-index: -1;
+}
+
+/*================================================
+TS Subscribe Area CSS
+=================================================*/
+.ts-subscribe-area {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ts-subscribe-inner-area {
+  background-image: url(../../assets/images/subscribe/subscribe-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  padding: 80px 100px;
+}
+.ts-subscribe-inner-area .ts-section-title {
+  max-width: 700px;
+  margin: 0 auto 35px;
+}
+.ts-subscribe-inner-area .newsletter-form {
+  max-width: 730px;
+  margin: auto;
+  position: relative;
+}
+.ts-subscribe-inner-area .newsletter-form .input-newsletter {
+  display: inline-block;
+  height: 60px;
+  background-color: transparent;
+  border: 1px solid var(--white-color);
+  outline: 0;
+  box-shadow: unset;
+  border-radius: 50px;
+  padding: 15px 25px;
+  color: #FFF2EE;
+  transition: var(--transition);
+  font-size: 15px;
+  width: 100%;
+}
+.ts-subscribe-inner-area .newsletter-form .input-newsletter::-moz-placeholder {
+  color: #FFF2EE;
+  -moz-transition: var(--transition);
+  transition: var(--transition);
+}
+.ts-subscribe-inner-area .newsletter-form .input-newsletter::placeholder {
+  color: #FFF2EE;
+  transition: var(--transition);
+}
+.ts-subscribe-inner-area .newsletter-form .input-newsletter:focus {
+  border: 1px solid var(--main-color);
+}
+.ts-subscribe-inner-area .newsletter-form .input-newsletter:focus::-moz-placeholder {
+  color: transparent;
+}
+.ts-subscribe-inner-area .newsletter-form .input-newsletter:focus::placeholder {
+  color: transparent;
+}
+.ts-subscribe-inner-area .newsletter-form .ts-default-btn {
+  border: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 50px;
+  background: var(--white-color);
+}
+.ts-subscribe-inner-area .newsletter-form .ts-default-btn span {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+}
+
+.ts-subscribe-shape-1 {
+  position: absolute;
+  top: 0;
+  left: 45px;
+  z-index: -1;
+}
+
+.ts-subscribe-shape-2 {
+  position: absolute;
+  top: 0;
+  right: 45px;
+  z-index: -1;
+}
+
+/*================================================
+TS Reviews Area CSS
+=================================================*/
+.ts-reviews-area .container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.ts-reviews-card {
+  background-color: var(--white-color);
+  box-shadow: 0px 4px 30px rgba(104, 99, 111, 0.05);
+  padding: 35px 55px 50px;
+  border-bottom: 1px solid #f9f9f9;
+  transition: var(--transition);
+}
+.ts-reviews-card .info {
+  margin-bottom: 30px;
+}
+.ts-reviews-card .info .image img {
+  border-radius: 50%;
+}
+.ts-reviews-card .info .title {
+  margin-left: 20px;
+}
+.ts-reviews-card .info .title h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.ts-reviews-card .info .title h3 span {
+  color: #8E8E8E;
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+.ts-reviews-card .info .title .rating {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-reviews-card .info .title .rating li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 2px;
+}
+.ts-reviews-card .info .title .rating li:last-child {
+  margin-right: 0;
+}
+.ts-reviews-card .info .title .rating li i {
+  font-size: 15.5px;
+  color: #F0C005;
+}
+.ts-reviews-card p {
+  color: #454545;
+}
+.ts-reviews-card:hover {
+  border-bottom: 1px solid var(--main-color);
+}
+
+.ts-reviews-slides.owl-theme .owl-nav {
+  margin-top: 0;
+}
+.ts-reviews-slides.owl-theme .owl-nav [class*=owl-] {
+  display: inline-block;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: var(--white-color);
+  border-radius: 50px;
+  border: 1px solid #FC8A45;
+  transition: var(--transition);
+  color: var(--white-color);
+  font-size: 22px;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ts-reviews-slides.owl-theme .owl-nav [class*=owl-] i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ts-reviews-slides.owl-theme .owl-nav [class*=owl-]::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--gradient-color);
+  border-radius: 50px;
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+}
+.ts-reviews-slides.owl-theme .owl-nav [class*=owl-].owl-next {
+  right: -10px;
+  left: auto;
+}
+.ts-reviews-slides.owl-theme .owl-nav [class*=owl-]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+.ts-reviews-slides.owl-theme .owl-nav [class*=owl-]:hover i {
+  background: var(--white-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ts-reviews-wrap-slides.owl-theme .owl-nav {
+  margin-top: 0;
+}
+.ts-reviews-wrap-slides.owl-theme .owl-nav [class*=owl-] {
+  display: inline-block;
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: var(--white-color);
+  border-radius: 50px;
+  border: 1px solid #FC8A45;
+  transition: var(--transition);
+  color: var(--white-color);
+  font-size: 22px;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ts-reviews-wrap-slides.owl-theme .owl-nav [class*=owl-] i {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.ts-reviews-wrap-slides.owl-theme .owl-nav [class*=owl-]::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--gradient-color);
+  border-radius: 50px;
+  transition: var(--transition);
+  opacity: 0;
+  visibility: hidden;
+}
+.ts-reviews-wrap-slides.owl-theme .owl-nav [class*=owl-].owl-next {
+  right: -10px;
+  left: auto;
+}
+.ts-reviews-wrap-slides.owl-theme .owl-nav [class*=owl-]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+.ts-reviews-wrap-slides.owl-theme .owl-nav [class*=owl-]:hover i {
+  background: var(--white-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*================================================
+TS Page Banner Area CSS
+=================================================*/
+.ts-page-banner-area {
+  background: linear-gradient(270deg, #FF869E 0%, rgba(253, 171, 121, 0.5) 100%);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.ts-page-banner-area::before {
+  position: absolute;
+  content: "";
+  left: 210px;
+  top: -45px;
+  display: inline-block;
+  height: 135px;
+  width: 135px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.12) 100%);
+  border-radius: 50%;
+  z-index: -1;
+}
+.ts-page-banner-area::after {
+  position: absolute;
+  content: "";
+  right: 50px;
+  bottom: 50px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.04) 100%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.ts-page-banner-content {
+  text-align: center;
+}
+.ts-page-banner-content h2 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+.ts-page-banner-content h2 span {
+  font-weight: 500;
+}
+.ts-page-banner-content .list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-page-banner-content .list li {
+  list-style-type: none;
+  color: #3F3F3F;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  margin-right: 38px;
+}
+.ts-page-banner-content .list li::before {
+  position: absolute;
+  content: ">>";
+  right: -30px;
+  top: 1px;
+  color: #3F3F3F;
+}
+.ts-page-banner-content .list li a {
+  color: #3F3F3F;
+}
+.ts-page-banner-content .list li a:hover {
+  color: var(--black-color);
+}
+.ts-page-banner-content .list li:last-child {
+  margin-right: 0;
+}
+.ts-page-banner-content .list li:last-child::before {
+  display: none;
+}
+
+/*================================================
+Pagination CSS
+=================================================*/
+.pagination-area {
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.pagination-area .page-numbers {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: var(--white-color);
+  border: 1px solid #D6D6D6;
+  color: #232323;
+  text-align: center;
+  border-radius: 50px;
+  margin: 0 7px;
+  font-weight: 500;
+  font-size: 18px;
+}
+.pagination-area .page-numbers:hover, .pagination-area .page-numbers.current {
+  border: 1px solid #E7E7E7;
+  background: #E7E7E7;
+}
+.pagination-area .page-numbers.prev {
+  background: var(--white-color);
+  border: 1px solid #FDAB79;
+  color: var(--main-color);
+  font-size: 25px;
+  line-height: 52px;
+}
+.pagination-area .page-numbers.prev i {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pagination-area .page-numbers.prev:hover {
+  background: var(--gradient-color);
+  color: var(--white-color);
+}
+.pagination-area .page-numbers.prev:hover i {
+  background: var(--white-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pagination-area .page-numbers.next {
+  background: var(--white-color);
+  border: 1px solid #FDAB79;
+  color: var(--main-color);
+  font-size: 25px;
+  line-height: 52px;
+}
+.pagination-area .page-numbers.next i {
+  background: var(--gradient-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pagination-area .page-numbers.next:hover {
+  background: var(--gradient-color);
+  color: var(--white-color);
+}
+.pagination-area .page-numbers.next:hover i {
+  background: var(--white-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*================================================
+TS Brands Area CSS
+=================================================*/
+.ts-brands-area .container-fluid {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.ts-brands-card {
+  text-align: center;
+}
+.ts-brands-card a img {
+  display: inline-block !important;
+  width: auto !important;
+  margin: auto;
+}
+
+/*================================================
+TS Refund & Return Policy Area CSS
+=================================================*/
+.ts-refund-return-policy-inner {
+  max-width: 1080px;
+  margin: auto;
+}
+.ts-refund-return-policy-inner .nav {
+  display: flex;
+  border: none;
+  text-align: center;
+  margin-bottom: 35px;
+}
+.ts-refund-return-policy-inner .nav .nav-item {
+  display: inline-block;
+  border: none;
+  margin-right: 25px;
+}
+.ts-refund-return-policy-inner .nav .nav-item:last-child {
+  margin-right: 0;
+}
+.ts-refund-return-policy-inner .nav .nav-item .nav-link {
+  border: none;
+  display: inline-block;
+  background-color: #f9f9f9;
+  font-weight: 700;
+  color: var(--black-color);
+  padding: 15px 30px;
+  transition: var(--transition);
+  width: 100%;
+  border-radius: 50px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+.ts-refund-return-policy-inner .nav .nav-item .nav-link:hover, .ts-refund-return-policy-inner .nav .nav-item .nav-link.active {
+  background-color: var(--main-color);
+  color: var(--white-color);
+}
+.ts-refund-return-policy-inner .refund-return-policy-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content p {
+  position: relative;
+  padding-left: 25px;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content p span {
+  font-weight: 500;
+  color: var(--black-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content .left-zero {
+  padding-left: 0;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content .list {
+  padding-left: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content .list li {
+  list-style-type: none;
+  color: var(--paragraph-color);
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 18px;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content .list li:last-child {
+  margin-bottom: 0;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content .list li::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 8px;
+  width: 8px;
+  background-color: var(--main-color);
+  border-radius: 50px;
+}
+.ts-refund-return-policy-inner .refund-return-policy-content .list li:hover i {
+  background-color: var(--main-color);
+}
+
+/*================================================
+TS Terms & Condition Area CSS
+=================================================*/
+.ts-terms-condition-content {
+  max-width: 835px;
+  margin: auto;
+}
+.ts-terms-condition-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.ts-terms-condition-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.ts-terms-condition-content p {
+  margin-bottom: 25px;
+}
+.ts-terms-condition-content .list {
+  padding-left: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.ts-terms-condition-content .list li {
+  list-style-type: none;
+  color: var(--paragraph-color);
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 18px;
+}
+.ts-terms-condition-content .list li:last-child {
+  margin-bottom: 0;
+}
+.ts-terms-condition-content .list li::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 8px;
+  width: 8px;
+  background-color: var(--main-color);
+  border-radius: 50px;
+}
+.ts-terms-condition-content .list li:hover i {
+  background-color: var(--main-color);
+}
+
+/*================================================
+TS Privacy Policy Area CSS
+=================================================*/
+.ts-privacy-policy-content {
+  max-width: 835px;
+  margin: auto;
+}
+.ts-privacy-policy-content h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.ts-privacy-policy-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.ts-privacy-policy-content p {
+  margin-bottom: 25px;
+}
+.ts-privacy-policy-content .list {
+  padding-left: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.ts-privacy-policy-content .list li {
+  list-style-type: none;
+  color: var(--paragraph-color);
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 18px;
+}
+.ts-privacy-policy-content .list li:last-child {
+  margin-bottom: 0;
+}
+.ts-privacy-policy-content .list li::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 8px;
+  width: 8px;
+  background-color: var(--main-color);
+  border-radius: 50px;
+}
+.ts-privacy-policy-content .list li:hover i {
+  background-color: var(--main-color);
+}
+
+/*================================================
+TS 404 Area CSS
+=================================================*/
+.ts-404-content {
+  max-width: 665px;
+  margin: auto;
+  text-align: center;
+}
+.ts-404-content .content {
+  margin-top: 45px;
+}
+.ts-404-content .content h3 {
+  font-weight: 800;
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+.ts-404-content .content span {
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--black-color);
+}
+
+/*================================================
+TS My Account Area CSS
+=================================================*/
+.ts-my-account-area .container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.ts-my-account-image {
+  background-image: url(../../assets/images/my-account/login.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+.ts-my-account-image.bg-two {
+  background-image: url(../../assets/images/my-account/register.jpg);
+}
+
+.ts-my-account-form {
+  padding-left: 90px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.ts-my-account-form h3 {
+  font-size: 22px;
+  margin-bottom: 0;
+}
+.ts-my-account-form form {
+  margin-top: 30px;
+}
+.ts-my-account-form form .form-group {
+  margin-bottom: 25px;
+}
+.ts-my-account-form form .form-group label {
+  color: #161414;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+}
+.ts-my-account-form form .form-group label span {
+  color: var(--main-color);
+}
+.ts-my-account-form form .form-group .form-control {
+  display: inline-block;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #ECE1DE;
+  background-color: var(--white-color);
+  border-radius: 50px;
+  padding: 15px 20px;
+  outline: 0;
+  box-shadow: unset;
+  letter-spacing: 0.02em;
+  color: #A7A7A7;
+  font-weight: 300;
+  transition: var(--transition);
+}
+.ts-my-account-form form .form-group .form-control::-moz-placeholder {
+  color: #A7A7A7;
+  -moz-transition: var(--transition);
+  transition: var(--transition);
+}
+.ts-my-account-form form .form-group .form-control::placeholder {
+  color: #A7A7A7;
+  transition: var(--transition);
+}
+.ts-my-account-form form .form-group .form-control:focus {
+  border: 1px solid var(--main-color);
+}
+.ts-my-account-form form .form-group .form-control:focus::-moz-placeholder {
+  color: transparent;
+}
+.ts-my-account-form form .form-group .form-control:focus::placeholder {
+  color: transparent;
+}
+.ts-my-account-form form .form-cookies-consent {
+  margin-bottom: 0;
+}
+.ts-my-account-form form .form-cookies-consent a {
+  color: #4B4B4B;
+  font-weight: 500;
+  font-size: 15px;
+}
+.ts-my-account-form form .form-cookies-consent a:hover {
+  color: var(--main-color);
+}
+.ts-my-account-form form .form-cookies-consent [type=checkbox]:checked, .ts-my-account-form form .form-cookies-consent [type=checkbox]:not(:checked) {
+  display: none;
+}
+.ts-my-account-form form .form-cookies-consent [type=checkbox]:checked + label, .ts-my-account-form form .form-cookies-consent [type=checkbox]:not(:checked) + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0;
+  color: #4B4B4B;
+  font-size: 14px;
+}
+.ts-my-account-form form .form-cookies-consent [type=checkbox]:checked + label:before, .ts-my-account-form form .form-cookies-consent [type=checkbox]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  transition: all 0.2s ease;
+  background: #D9D9D9;
+  border-radius: 50px;
+}
+.ts-my-account-form form .form-cookies-consent [type=checkbox]:checked + label:after, .ts-my-account-form form .form-cookies-consent [type=checkbox]:not(:checked) + label:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--black-color);
+  border-radius: 50px;
+  position: absolute;
+  top: 6.5px;
+  left: 5px;
+  transition: all 0.2s ease;
+}
+.ts-my-account-form form .form-cookies-consent [type=checkbox]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.ts-my-account-form form .form-cookies-consent [type=checkbox]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.ts-my-account-form form .form-cookies-consent [type=checkbox]:hover + label:before {
+  border-color: var(--main-color);
+}
+.ts-my-account-form form .form-cookies-consent [type=checkbox]:checked + label:before {
+  border-color: var(--main-color);
+}
+.ts-my-account-form form .lost-your-password {
+  text-align: end;
+}
+.ts-my-account-form form .lost-your-password a {
+  display: inline-block;
+  position: relative;
+  font-weight: 300;
+  font-size: 15px;
+  color: #4B4B4B;
+  text-decoration-line: underline;
+}
+.ts-my-account-form form .lost-your-password a:hover {
+  color: var(--main-color);
+}
+.ts-my-account-form form .ts-default-btn {
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: var(--font-size);
+}
+.ts-my-account-form form .ts-default-btn img {
+  top: 0;
+}
+.ts-my-account-form .account-btn {
+  text-align: center;
+  margin-top: 25px;
+}
+.ts-my-account-form .account-btn span {
+  display: block;
+  margin-bottom: 20px;
+}
+.ts-my-account-form .account-btn span a {
+  color: #4B4B4B;
+  font-weight: 300;
+  font-size: 15px;
+}
+.ts-my-account-form .account-btn .ts-default-btn {
+  background: transparent;
+  border: 1px solid #8B8582;
+  font-weight: 500;
+  font-size: var(--font-size);
+  color: var(--black-color) !important;
+  width: 100%;
+  margin-top: 0;
+}
+.ts-my-account-form .account-btn .ts-default-btn:hover {
+  color: var(--white-color) !important;
+  border: 1px solid var(--black-color);
+}
+.ts-my-account-form .sub-or {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+.ts-my-account-form .sub-or span {
+  font-weight: 300;
+  font-size: 15px;
+  color: #4B4B4B;
+  background: var(--white-color);
+  padding: 0 30px;
+}
+.ts-my-account-form .sub-or::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 11px;
+  height: 1px;
+  width: 100%;
+  z-index: -1;
+  background: #EEEEEE;
+}
+.ts-my-account-form .em-social {
+  padding-left: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+.ts-my-account-form .em-social li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 15px;
+}
+.ts-my-account-form .em-social li:last-child {
+  margin-right: 0;
+}/*# sourceMappingURL=tee-store.css.map */

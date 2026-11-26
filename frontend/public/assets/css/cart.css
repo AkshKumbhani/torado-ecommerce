@@ -1,0 +1,235 @@
+/*================================================
+TS Cart Area CSS
+=================================================*/
+.ts-cart-table table {
+  margin-bottom: 0;
+}
+.ts-cart-table table thead tr {
+  border: none;
+}
+.ts-cart-table table thead tr th {
+  vertical-align: middle;
+  padding: 0 25px 25px 25px;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 15px;
+  border: none;
+  color: #7B7B7B;
+  letter-spacing: 0.05em;
+}
+.ts-cart-table table thead tr th:last-child {
+  text-align: end;
+}
+.ts-cart-table table tbody tr {
+  border: none;
+  background: #FBFBFB;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #F1F1F1;
+}
+.ts-cart-table table tbody tr.border-none {
+  border-bottom: none;
+}
+.ts-cart-table table tbody tr td {
+  vertical-align: middle;
+  white-space: nowrap;
+  padding: 25px;
+  border: none;
+}
+.ts-cart-table table tbody tr td:last-child {
+  text-align: end;
+}
+.ts-cart-table table tbody tr td.product-thumbnail {
+  display: flex;
+  align-items: center;
+}
+.ts-cart-table table tbody tr td.product-thumbnail .image a img {
+  width: 100px;
+  border-radius: 5px;
+}
+.ts-cart-table table tbody tr td.product-thumbnail .title {
+  margin-left: 25px;
+}
+.ts-cart-table table tbody tr td.product-thumbnail .title h3 {
+  font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.ts-cart-table table tbody tr td.product-thumbnail .title h3 a {
+  color: var(--black-color);
+}
+.ts-cart-table table tbody tr td.product-thumbnail .title .list {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.ts-cart-table table tbody tr td.product-thumbnail .title .list li {
+  list-style-type: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3C3C3C;
+}
+.ts-cart-table table tbody tr td.product-thumbnail .title .list li span {
+  color: #686868;
+}
+.ts-cart-table table tbody tr td.product-thumbnail .title .list li:last-child {
+  margin-bottom: 0;
+}
+.ts-cart-table table tbody tr td.product-price .unit-amount {
+  color: var(--black-color);
+  font-weight: 500;
+  font-size: 14px;
+}
+.ts-cart-table table tbody tr td.product-subtotal .subtotal-amount {
+  color: var(--black-color);
+  font-weight: bold;
+  font-size: 14px;
+}
+.ts-cart-table table tbody tr td.product-quantity .input-counter {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  background: #F1F1F1;
+  border-radius: 50px;
+  padding: 10px 15px;
+}
+.ts-cart-table table tbody tr td.product-quantity .input-counter span {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--black-color);
+  cursor: pointer;
+  position: relative;
+  top: 1.5px;
+}
+.ts-cart-table table tbody tr td.product-quantity .input-counter input {
+  color: var(--black-color);
+  outline: 0;
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  width: 65px;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  top: -2px;
+}
+.ts-cart-table table tbody tr td.product-quantity .input-counter input::-moz-placeholder {
+  color: var(--black-color);
+}
+.ts-cart-table table tbody tr td.product-quantity .input-counter input::placeholder {
+  color: var(--black-color);
+}
+.ts-cart-table table tbody tr td.remove a i {
+  font-size: 25px;
+  color: var(--black-color);
+  transition: var(--transition);
+}
+.ts-cart-table table tbody tr td.remove a i:hover {
+  color: var(--main-color);
+}
+.ts-cart-table table tbody:not(:first-child) {
+  border-top: unset;
+}
+
+.ts-cart-totals-inner {
+  margin-top: 40px;
+}
+
+.ts-cart-shopping-content a {
+  position: relative;
+  font-weight: 500;
+  color: #161414;
+  padding-left: 25px;
+}
+.ts-cart-shopping-content a i {
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 1;
+}
+.ts-cart-shopping-content a:hover {
+  color: var(--main-color);
+}
+
+.ts-cart-totals-box {
+  position: relative;
+  max-width: 390px;
+  margin-left: auto;
+}
+.ts-cart-totals-box .cart-note-shipping {
+  background: #EEEEEE;
+  padding: 15px;
+}
+.ts-cart-totals-box .cart-note-shipping .cart-note {
+  background-color: var(--white-color);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  margin-right: 7.5px;
+}
+.ts-cart-totals-box .cart-note-shipping .cart-note span {
+  color: #161414;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-top: 15px;
+}
+.ts-cart-totals-box .cart-note-shipping .cart-shipping {
+  background-color: var(--white-color);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  margin-left: 7.5px;
+}
+.ts-cart-totals-box .cart-note-shipping .cart-shipping span {
+  color: #161414;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin-top: 15px;
+}
+.ts-cart-totals-box .cart-subtotal {
+  margin-top: 30px;
+  padding: 0 20px;
+}
+.ts-cart-totals-box .cart-subtotal .sub {
+  font-weight: 600;
+  color: #161414;
+}
+.ts-cart-totals-box .cart-subtotal .total {
+  font-weight: bold;
+  color: #161414;
+}
+.ts-cart-totals-box .cart-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+.ts-cart-totals-box .cart-btn .ts-default-btn {
+  width: 100%;
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+  .ts-cart-table table tbody tr td.product-thumbnail .image a img {
+    max-width: 65px;
+  }
+  .ts-cart-totals-inner {
+    margin-top: 25px;
+  }
+  .ts-cart-totals-inner .ts-cart-shopping-content {
+    margin-bottom: 20px;
+  }
+}
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .ts-cart-table table tbody tr td.product-thumbnail .image a img {
+    max-width: 65px;
+  }
+  .ts-cart-totals-inner {
+    margin-top: 25px;
+  }
+  .ts-cart-totals-inner .ts-cart-shopping-content {
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=cart.css.map */
