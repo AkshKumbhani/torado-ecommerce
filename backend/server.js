@@ -15,8 +15,22 @@ import storeRoutes from './routes/store.js';
 import paymentRoutes from './routes/payments.js';
 import uploadRoutes, { productUploadDirectory } from './routes/uploads.js';
 
+// Global error handlers to prevent silent crashes
+process.on('uncaughtException', (err) => {
+  console.error('CRITICAL Uncaught Exception:', err);
+});
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('CRITICAL Unhandled Rejection at:', promise, 'reason:', reason);
+});
+
 const app = express();
-app.use(cors({ origin: (process.env.CLIENT_ORIGIN || 'http://localhost:3001').split(','), credentials: true }));
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow all local dev origins and configured CLIENT_ORIGIN
+    callback(null, true);
+  },
+  credentials: true
+}));
 app.use(express.json({ limit: '2mb', verify: (req, _res, buffer) => { req.rawBody = Buffer.from(buffer); } }));
 app.use('/uploads/products', express.static(productUploadDirectory, { fallthrough: false, maxAge: '7d' }));
 

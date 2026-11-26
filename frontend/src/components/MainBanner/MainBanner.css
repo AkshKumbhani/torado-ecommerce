@@ -369,7 +369,8 @@ TS Main Banner Area CSS
     padding-top: 40px;
     padding-bottom: 40px;
     overflow: hidden !important;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
   }
   .ts-main-banner-area .container-fluid {
     padding-right: 15px;
