@@ -34,6 +34,19 @@ app.use(cors({
 app.use(express.json({ limit: '2mb', verify: (req, _res, buffer) => { req.rawBody = Buffer.from(buffer); } }));
 app.use('/uploads/products', express.static(productUploadDirectory, { fallthrough: false, maxAge: '7d' }));
 
+app.get('/', (_req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'Torado eCommerce API is live and running on Render',
+    endpoints: {
+      health: '/api/health',
+      products: '/api/store/products',
+      categories: '/api/store/categories',
+      banners: '/api/store/banners'
+    }
+  });
+});
+
 app.get('/api/health', async (_req, res) => {
   try {
     await query('SELECT 1');
