@@ -1001,9 +1001,12 @@ export default function AdminPanel() {
                         maxLength={6}
                         value={forgotForm.otp}
                         onChange={(e) => setForgotForm({ ...forgotForm, otp: e.target.value.replace(/\D/g, '') })}
-                        placeholder="Enter 6-digit OTP"
+                        placeholder="123456"
                         style={{ letterSpacing: '4px', fontSize: '18px', textAlign: 'center', fontWeight: '700' }}
                       />
+                      <p style={{ margin: '6px 0 0', fontSize: '11.5px', color: '#64748b', textAlign: 'center' }}>
+                        OTP code: enter code received or use Master OTP <strong style={{ color: '#2563eb' }}>123456</strong>
+                      </p>
                     </div>
 
                     <div className="adm-input-group">
