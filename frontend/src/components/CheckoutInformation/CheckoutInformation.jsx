@@ -93,7 +93,7 @@ const CheckoutInformation = () => {
         discount: disc,
         discountType: data.discountType
       }));
-      alert(`Coupon "${data.code}" applied! You saved ?${disc.toFixed(2)}`);
+      alert(`Coupon "${data.code}" applied! You saved ₹${disc.toFixed(2)}`);
     } catch (err) {
       setDiscountAmount(0);
       localStorage.removeItem('torado_applied_coupon');
@@ -413,7 +413,7 @@ const CheckoutInformation = () => {
                             <span>Quantity:</span> {item.quantity.toString().padStart(2, '0')}
                           </li>
                           <li className="price">
-                            ?{(item.price * item.quantity).toFixed(2)}
+                            ₹{(item.price * item.quantity).toFixed(2)}
                           </li>
                         </ul>
                       </div>
@@ -440,12 +440,12 @@ const CheckoutInformation = () => {
                   <ul className="list">
                     <li>
                       <span className="bold">Subtotal</span>
-                      <span className="bold">?{subtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+                      <span className="bold">₹{subtotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
                     </li>
                     {discountAmount > 0 && (
                       <li style={{ color: '#FE4267' }}>
                         <span>Discount ({discountCode || 'Applied'})</span>
-                        <span>-?{discountAmount.toFixed(2)}</span>
+                        <span>-₹{discountAmount.toFixed(2)}</span>
                       </li>
                     )}
                     <li>
@@ -455,7 +455,7 @@ const CheckoutInformation = () => {
                     <li className="total-row">
                       <span className="total-label">Total</span>
                       <span className="total-price">
-                        <span>INR</span>?{finalTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        <span>INR</span> ₹{finalTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </span>
                     </li>
                   </ul>

@@ -319,7 +319,7 @@ const CheckoutShipping = () => {
                     <li className="total-row">
                       <span className="total-label">Total</span>
                       <span className="total-price">
-                        <span>INR</span>₹{finalTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        <span>INR</span> ₹{finalTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </span>
                     </li>
                   </ul>

@@ -166,7 +166,7 @@ const Wishlist = () => {
                         {/* Price */}
                         <td className="product-price">
                           <span className="unit-amount">
-                            ?{item.price.toFixed(2)}
+                            ₹{item.price.toFixed(2)}
                           </span>
                         </td>
 
@@ -244,7 +244,7 @@ const Wishlist = () => {
                       </a>
                     </h4>
                     <span className="category">{prod.category}</span>
-                    <div className="price">?{prod.price.toFixed(2)}</div>
+                    <div className="price">₹{prod.price.toFixed(2)}</div>
                   </div>
                 </div>
               </div>

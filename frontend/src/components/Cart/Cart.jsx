@@ -33,7 +33,7 @@ const Cart = () => {
     e.preventDefault();
     if (zip.trim()) {
       setShippingRate(15.00);
-      alert('Shipping calculated: Standard Shipping (?15.00)');
+      alert('Shipping calculated: Standard Shipping (₹15.00)');
     } else {
       alert('Please enter a zip/postal code');
     }
@@ -148,7 +148,7 @@ const Cart = () => {
                         {/* Price */}
                         <td className="product-price">
                           <span className="unit-amount">
-                            ?{item.price.toFixed(2)}
+                            ₹{item.price.toFixed(2)}
                           </span>
                         </td>
 
@@ -178,7 +178,7 @@ const Cart = () => {
                         {/* Total */}
                         <td className="product-subtotal">
                           <span className="subtotal-amount">
-                            ${(item.price * item.quantity).toFixed(2)}
+                            ₹{(item.price * item.quantity).toFixed(2)}
                           </span>
                         </td>
 
@@ -320,7 +320,7 @@ const Cart = () => {
                       <div className="cart-subtotal">
                         <span className="sub">Subtotal</span>
                         <span className="total">
-                          ${grandTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                          ₹{grandTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
                       </div>
 

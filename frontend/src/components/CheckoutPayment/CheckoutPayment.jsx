@@ -620,7 +620,7 @@ const CheckoutPayment = () => {
                             <span>Quantity:</span> {item.quantity.toString().padStart(2, '0')}
                           </li>
                           <li className="price">
-                            ${(item.price * item.quantity).toFixed(2)}
+                            ₹{(item.price * item.quantity).toFixed(2)}
                           </li>
                         </ul>
                       </div>
@@ -662,7 +662,7 @@ const CheckoutPayment = () => {
                     <li className="total-row">
                       <span className="total-label">Total</span>
                       <span className="total-price">
-                        <span>INR</span>₹{finalTotal.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                        <span>INR</span> ₹{finalTotal.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                       </span>
                     </li>
                   </ul>
