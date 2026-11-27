@@ -98,11 +98,16 @@ router.post('/forgot-password', async (req, res, next) => {
       const hash = await bcrypt.hash(otp, 10);
       await query('DELETE FROM password_otps WHERE user_id=?', [user.id]);
       await query('INSERT INTO password_otps(user_id,otp_hash,expires_at) VALUES(?,?,DATE_ADD(NOW(),INTERVAL 10 MINUTE))', [user.id, hash]);
-      sendPasswordResetEmail({
-        to: email,
-        customerName: user.name || 'Valued Customer',
-        resetCode: otp,
-      }).catch(console.error);
+      try {
+        await sendPasswordResetEmail({
+          to: email,
+          customerName: user.name || 'Valued Customer',
+          resetCode: otp,
+        });
+        console.log(`[auth] Password reset OTP email successfully sent to ${email}`);
+      } catch (mailErr) {
+        console.error('[auth] Failed to send password reset email:', mailErr.message);
+      }
     }
     res.json({ message: 'If an account exists, a verification code has been sent.' });
   } catch (e) { next(e); }

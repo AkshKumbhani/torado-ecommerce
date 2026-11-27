@@ -2,12 +2,9 @@ import nodemailer from 'nodemailer';
 import { generateOrderInvoicePdf } from './invoicePdfService.js';
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  pool: true,
-  maxConnections: 5,
-  maxMessages: 100,
-  rateDelta: 1000,
-  rateLimit: 5,
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.SMTP_USER || process.env.EMAIL_USER || 'akshkumbhani2@gmail.com',
     pass: process.env.SMTP_PASSWORD || process.env.EMAIL_PASSWORD || 'ncsxyuivqjtqondf',

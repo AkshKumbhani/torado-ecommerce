@@ -781,9 +781,6 @@ export default function AdminPanel() {
         {/* Right Form Panel (Clean White / Light Background) */}
         <div className="adm-form-side">
           <div className="adm-form-box">
-            <a href="/" className="adm-back-link">
-              ← Back to Torado Store
-            </a>
 
             {/* 1. LOGIN MODE */}
             {authMode === 'login' && (
