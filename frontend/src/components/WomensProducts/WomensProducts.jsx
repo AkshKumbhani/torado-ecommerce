@@ -67,7 +67,7 @@ const WomensProducts = () => {
       <div className="women-content mt-3">
         <h3><a href="#shop">{prod.name}</a></h3>
         <span>{prod.category}</span>
-        <div className="price mt-1">?{prod.price.toFixed(2)}</div>
+        <div className="price mt-1">₹{prod.price.toFixed(2)}</div>
       </div>
     </div>
   );

@@ -101,7 +101,7 @@ const FlashSale = () => {
                       <h3><a href="#shop">{prod.name}</a></h3>
                       <span>{prod.category}</span>
                       <div className="price mt-1">
-                        $ {prod.price.toFixed(2)}
+                        ₹{prod.price.toFixed(2)}
                         {prod.oldPrice && <span className="old-price ms-2 text-decoration-line-through text-muted">₹{prod.oldPrice.toFixed(2)}</span>}
                       </div>
                     </div>
