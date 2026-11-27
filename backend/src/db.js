@@ -15,7 +15,11 @@ export const pool = mysql.createPool({
   database: process.env.DB_NAME || 'torado_store',
   waitForConnections: true,
   connectionLimit: 10,
-  decimalNumbers: true
+  decimalNumbers: true,
+  ssl: (process.env.DB_SSL === 'true' || (process.env.DB_HOST && !['127.0.0.1', 'localhost'].includes(process.env.DB_HOST))) ? {
+    minVersion: 'TLSv1.2',
+    rejectUnauthorized: true
+  } : undefined
 });
 
 export const query = async (sql, params = []) => {
