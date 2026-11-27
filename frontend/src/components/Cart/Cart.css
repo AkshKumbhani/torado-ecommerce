@@ -390,6 +390,11 @@ TS Cart Area CSS (Exact Torado Theme Match)
 }
 
 /* Responsive Media Queries */
+.ts-page-banner-content .list li:last-child::before {
+  display: none !important;
+  content: "" !important;
+}
+
 @media only screen and (max-width: 767px) {
   .ts-cart-area {
     padding-top: 50px;

@@ -566,7 +566,7 @@ const ShopHiddenSidebar = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={`$ ${minPrice}`}
+                        value={`₹ ${minPrice}`}
                         onChange={(e) => setMinPrice(e.target.value.replace(/[^0-9.]/g, ''))}
                       />
                     </div>
@@ -576,7 +576,7 @@ const ShopHiddenSidebar = () => {
                       <input
                         type="text"
                         className="form-control"
-                        value={`$ ${maxPrice}`}
+                        value={`₹ ${maxPrice}`}
                         onChange={(e) => setMaxPrice(e.target.value.replace(/[^0-9.]/g, ''))}
                       />
                     </div>
