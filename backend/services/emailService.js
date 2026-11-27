@@ -12,6 +12,11 @@ export const transporter = nodemailer.createTransport({
   }
 });
 
+const DEFAULT_STORE_URL = process.env.CLIENT_ORIGIN && !process.env.CLIENT_ORIGIN.includes('localhost')
+  ? process.env.CLIENT_ORIGIN
+  : 'https://torado-ecommerce.vercel.app';
+const DEFAULT_TRACKING_URL = `${DEFAULT_STORE_URL}/#track-my-order`;
+
 /* ─────────────────────────────────────────────────────────────
    STATUS & THEME COLOR SYSTEM (CarePulse HMS Palette)
 ───────────────────────────────────────────────────────────── */
@@ -232,7 +237,7 @@ export const sendOrderConfirmationEmail = async ({
   order,
   items = [],
   paymentMethod = 'Online',
-  trackingUrl = 'http://localhost:3001/#track-my-order',
+  trackingUrl = DEFAULT_TRACKING_URL,
 }) => {
   const orderId = order.id || order.orderId || 'TRD-101';
   const orderTotal = Number(order.total || 0).toFixed(2);
@@ -335,7 +340,7 @@ export const sendOnlinePaymentSuccessEmail = async ({
   paymentId,
   amount,
   items = [],
-  trackingUrl = 'http://localhost:3001/#track-my-order',
+  trackingUrl = DEFAULT_TRACKING_URL,
 }) => {
   const orderId = order.id || order.orderId || 'TRD-101';
   const paidAmount = Number(amount || order.total || 0).toFixed(2);
@@ -429,7 +434,7 @@ export const sendCodCashCollectedEmail = async ({
   collectedAmount,
   items = [],
   deliveryAgent = 'Torado Express Logistics',
-  trackingUrl = 'http://localhost:3001/#track-my-order',
+  trackingUrl = DEFAULT_TRACKING_URL,
 }) => {
   const orderId = order.id || order.orderId || 'TRD-101';
   const amount = Number(collectedAmount || order.total || 0).toFixed(2);
@@ -521,7 +526,7 @@ export const sendOrderDeliveredEmail = async ({
   customerName = 'Aksh Kumbhani',
   order,
   items = [],
-  trackingUrl = 'http://localhost:3001/#track-my-order',
+  trackingUrl = DEFAULT_TRACKING_URL,
 }) => {
   const orderId = order.id || order.orderId || 'TRD-101';
   const orderTotal = Number(order.total || 0).toFixed(2);
@@ -613,7 +618,7 @@ export const sendOrderShippedEmail = async ({
   order,
   courierName = 'Torado Express Logistics (Delhivery / BlueDart)',
   trackingNumber = null,
-  trackingUrl = 'http://localhost:3001/#track-my-order',
+  trackingUrl = DEFAULT_TRACKING_URL,
 }) => {
   const orderId = order.id || order.orderId || 'TRD-101';
   const trkNo = trackingNumber || `TRK-IN-${orderId}-${Math.floor(1000 + Math.random() * 9000)}`;
@@ -669,7 +674,7 @@ export const sendOutForDeliveryEmail = async ({
   order,
   riderName = 'Ramesh Patel (Torado Delivery Partner)',
   riderPhone = '+91 98765 43210',
-  trackingUrl = 'http://localhost:3001/#track-my-order',
+  trackingUrl = DEFAULT_TRACKING_URL,
 }) => {
   const orderId = order.id || order.orderId || 'TRD-101';
   const isCod = String(order.payment_method || '').toLowerCase().includes('cod');
@@ -745,7 +750,7 @@ export const sendOrderCancelledEmail = async ({
     </table>
 
     <div style="text-align:center;margin:18px 0 12px;">
-      <a href="http://localhost:3001/#shop" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:11px 26px;border-radius:6px;font-size:13px;font-weight:700;">
+      <a href="${DEFAULT_STORE_URL}/#shop" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:11px 26px;border-radius:6px;font-size:13px;font-weight:700;">
         Browse Torado Collections →
       </a>
     </div>
@@ -837,7 +842,7 @@ export const sendWelcomeEmail = async ({
     </table>
 
     <div style="text-align:center;margin:18px 0 12px;">
-      <a href="http://localhost:3001/#shop" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:11px 26px;border-radius:6px;font-size:13px;font-weight:700;">
+      <a href="${DEFAULT_STORE_URL}/#shop" style="display:inline-block;background:#0f172a;color:#ffffff;text-decoration:none;padding:11px 26px;border-radius:6px;font-size:13px;font-weight:700;">
         Start Shopping Now →
       </a>
     </div>
@@ -864,7 +869,7 @@ export const sendPasswordResetEmail = async ({
   to,
   customerName = 'Aksh Kumbhani',
   resetCode = '123456',
-  resetUrl = 'http://localhost:3001/#login',
+  resetUrl = `${DEFAULT_STORE_URL}/#login`,
 }) => {
   const bodyHtml = `
     <p style="margin:0 0 14px;font-size:17px;font-weight:700;color:#0f172a;letter-spacing:-0.2px;">Password Reset Code</p>
