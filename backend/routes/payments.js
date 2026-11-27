@@ -60,7 +60,7 @@ router.post('/razorpay/order', async (req,res,next)=>{let connection;try{
   const gatewayOrder = await rzp.orders.create({ amount: Math.round(total * 100), currency: 'INR', receipt: `torado-${Date.now()}` });
   const shippingAddr = req.body.shippingAddress || null;
   const [created] = await connection.execute(
-    "INSERT INTO orders(user_id,customer_name,customer_email,shipping_address,subtotal,total,payment_method,coupon_code,payment_status,status) VALUES(?,?,?,?,?,?,?,'online',?,'pending','pending')",
+    "INSERT INTO orders(user_id,customer_name,customer_email,shipping_address,subtotal,total,payment_method,coupon_code,payment_status,status) VALUES(?,?,?,?,?,?,'online',?,'pending','pending')",
     [customer.id, customer.name, customer.email, shippingAddr ? JSON.stringify(shippingAddr) : null, subtotal, total, couponId ? String(req.body.couponCode).trim().toUpperCase() : null]
   );
   for (const line of lines) {
