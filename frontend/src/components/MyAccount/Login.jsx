@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import API_BASE from '../../config/api';
 import "./MyAccount.css";
 import { useShop } from "../../context/ShopContext.jsx";
 

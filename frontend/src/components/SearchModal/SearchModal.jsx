@@ -1,4 +1,5 @@
 ﻿import React, { useState, useMemo, useEffect } from 'react';
+import API_BASE from '../../config/api';
 import './SearchModal.css';
 import { useShop } from '../../context/ShopContext.jsx';
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import API_BASE from '../../config/api';
 import "./SearchResultPage.css";
 import { useShop } from "../../context/ShopContext.jsx";
 
