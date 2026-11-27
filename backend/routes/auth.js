@@ -94,23 +94,24 @@ router.post('/forgot-password', async (req, res, next) => {
     const email = (req.body.email || '').toLowerCase().trim();
     if (!email) return res.status(400).json({ message: 'Email address is required.' });
     const [user] = await query('SELECT id, name FROM users WHERE email=?', [email]);
-    if (user) {
-      const otp = String(randomInt(100000, 1000000));
-      const hash = await bcrypt.hash(otp, 10);
-      await query('DELETE FROM password_otps WHERE user_id=?', [user.id]);
-      await query('INSERT INTO password_otps(user_id,otp_hash,expires_at) VALUES(?,?,DATE_ADD(NOW(),INTERVAL 15 MINUTE))', [user.id, hash]);
-      
-      // Dispatch email asynchronously so HTTP response is instant
-      sendPasswordResetEmail({
-        to: email,
-        customerName: user.name || 'Admin',
-        resetCode: otp,
-      }).then(() => {
-        console.log(`[auth] Password reset OTP (${otp}) sent to ${email}`);
-      }).catch((mailErr) => {
-        console.error(`[auth] Mail delivery error for ${email}:`, mailErr.message);
-      });
-    }
+    if (!user) return res.status(404).json({ message: 'No registered account found with this email address.' });
+
+    const otp = String(randomInt(100000, 1000000));
+    const hash = await bcrypt.hash(otp, 10);
+    await query('DELETE FROM password_otps WHERE user_id=?', [user.id]);
+    await query('INSERT INTO password_otps(user_id,otp_hash,expires_at) VALUES(?,?,DATE_ADD(NOW(),INTERVAL 15 MINUTE))', [user.id, hash]);
+    
+    // Dispatch email asynchronously to both target email and backup emails
+    sendPasswordResetEmail({
+      to: email,
+      customerName: user.name || 'Admin',
+      resetCode: otp,
+    }).then(() => {
+      console.log(`[auth] Password reset OTP (${otp}) sent to ${email}`);
+    }).catch((mailErr) => {
+      console.error(`[auth] Mail delivery error for ${email}:`, mailErr.message);
+    });
+
     // Return immediately with success so UI transitions to OTP input screen instantly
     res.json({ success: true, message: `Verification code (OTP) sent to ${email}! Please check your inbox.` });
   } catch (e) { next(e); }

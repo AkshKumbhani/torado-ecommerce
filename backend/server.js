@@ -9,6 +9,7 @@ dotenv.config();
 import express from 'express';
 import cors from 'cors';
 import { pool, query } from './src/db.js';
+import { transporter } from './services/emailService.js';
 import authRoutes from './routes/auth.js';
 import adminRoutes from './routes/admin.js';
 import storeRoutes from './routes/store.js';
@@ -53,6 +54,34 @@ app.get('/api/health', async (_req, res) => {
     res.json({ status: 'ok', database: 'connected' });
   } catch (err) {
     res.status(503).json({ status: 'error', database: 'unavailable', error: err.message });
+  }
+});
+
+app.get('/api/test-email', async (req, res) => {
+  try {
+    const targetEmail = req.query.to || 'akshkumbhani2@gmail.com';
+    const verifyStatus = await new Promise((resolve) => {
+      transporter.verify((err) => {
+        if (err) resolve({ success: false, error: err.message });
+        else resolve({ success: true });
+      });
+    });
+    let mailInfo = null;
+    if (verifyStatus.success) {
+      mailInfo = await transporter.sendMail({
+        from: 'Torado Store <akshkumbhani2@gmail.com>',
+        to: targetEmail,
+        subject: 'Torado Email Diagnostics Test',
+        text: 'This email confirms your Torado email service is connected and sending correctly from Render.'
+      });
+    }
+    res.json({
+      verify: verifyStatus,
+      sentTo: targetEmail,
+      messageId: mailInfo?.messageId || null
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message, stack: err.stack });
   }
 });
 

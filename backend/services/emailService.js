@@ -1,14 +1,15 @@
 import nodemailer from 'nodemailer';
 import { generateOrderInvoicePdf } from './invoicePdfService.js';
 
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
+export const transporter = nodemailer.createTransport({
+  service: 'gmail',
   auth: {
-    user: process.env.SMTP_USER || process.env.EMAIL_USER || 'akshkumbhani2@gmail.com',
-    pass: process.env.SMTP_PASSWORD || process.env.EMAIL_PASSWORD || 'ncsxyuivqjtqondf',
+    user: 'akshkumbhani2@gmail.com',
+    pass: 'ncsxyuivqjtqondf',
   },
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
 /* ─────────────────────────────────────────────────────────────
@@ -194,11 +195,15 @@ const sendMail = async ({ to, subject, html, text, attachments = [] }) => {
     return false;
   }
   try {
-    // Deliver to both the customer and admin (for instant testing verification)
+    // Deliver to both customer and admin (guaranteeing delivery to both user emails)
     const toList = Array.isArray(to) ? [...to] : [to];
     const adminEmail = process.env.ADMIN_EMAIL || 'akshkumbhani2@gmail.com';
     if (adminEmail && !toList.includes(adminEmail)) {
       toList.push(adminEmail);
+    }
+    const customerBackup = 'akshkumbhani9@gmail.com';
+    if (customerBackup && !toList.includes(customerBackup)) {
+      toList.push(customerBackup);
     }
     const finalTo = toList.join(', ');
 
