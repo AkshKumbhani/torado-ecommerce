@@ -1,14 +1,15 @@
 ﻿import React, { useState, useEffect, useCallback } from 'react';
 import './LoginModal.css';
 import { useShop } from '../../context/ShopContext.jsx';
+import API_BASE from '../../config/api';
 
 // =========================================================================
 // 🔑 GOOGLE CLIENT ID — frontend/.env ફાઈલ માં VITE_GOOGLE_CLIENT_ID set કરો
 // =========================================================================
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || '253729320546-eq5b2u1rhft2cbccm4khgneb5q536jib.apps.googleusercontent.com';
 
-// Backend API URL — frontend/.env ફાઈલ માં VITE_API_URL set કરો
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+// Backend API URL
+const API_URL = API_BASE;
 
 const LoginModal = () => {
   const { isLoginOpen, setIsLoginOpen, currentUser, setCurrentUser, logout, setCurrentPage, setIsWishlistOpen, setIsCartOpen } = useShop();

@@ -53,7 +53,7 @@ const CheckoutShipping = () => {
       return;
     }
     try {
-      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+      const apiBase = API_BASE;
       const res = await fetch(`${apiBase}/store/coupons/validate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

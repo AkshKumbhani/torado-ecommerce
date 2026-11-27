@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import AdminIcon from './AdminIcons';
+import API_BASE from '../config/api';
 import './admin.css';
 
 const navGroups = [
@@ -60,7 +61,7 @@ const formatDateTime = (val) => {
 
 const api = async (path, options = {}) => {
   const token = localStorage.getItem('torado_admin_token');
-  const res = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3000/api'}${path}`, {
+  const res = await fetch(`${API_BASE}${path}`, {
     ...options,
     headers: {
       ...(options.body instanceof FormData ? {} : { 'Content-Type': 'application/json' }),

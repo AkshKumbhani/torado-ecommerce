@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SubscribeSection.css';
+import API_BASE from '../../config/api';
 
 const SubscribeSection = () => {
   const [email, setEmail] = useState('');
@@ -9,7 +10,7 @@ const SubscribeSection = () => {
     e.preventDefault();
     if (email) {
       try {
-        const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+        const apiBase = API_BASE;
         await fetch(`${apiBase}/subscribe`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },

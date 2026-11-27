@@ -41,7 +41,7 @@ const SearchModal = () => {
   const [dbProducts, setDbProducts] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/store/products')
+    fetch(`${API_BASE}/store/products`)
       .then((res) => res.ok ? res.json() : [])
       .then((data) => {
         if (Array.isArray(data) && data.length) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ReviewsSection.css';
+import API_BASE from '../../config/api';
 
 const defaultReviews = [
   {
@@ -46,7 +47,7 @@ const ReviewsSection = () => {
   const [submitToast, setSubmitToast] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/store/reviews')
+    fetch(`${API_BASE}/store/reviews`)
       .then(res => res.ok ? res.json() : [])
       .then(data => {
         if (Array.isArray(data) && data.length) {
@@ -91,7 +92,7 @@ const ReviewsSection = () => {
     e.preventDefault();
     if (!newReview.name || !newReview.comment) return;
     try {
-      await fetch('http://localhost:3000/api/store/reviews', {
+      await fetch(`${API_BASE}/store/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

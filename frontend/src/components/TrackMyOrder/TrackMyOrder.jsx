@@ -29,7 +29,7 @@ const TrackMyOrder = () => {
 
     setLoading(true);
     try {
-      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+      const apiBase = API_BASE;
       const cleanId = orderId.trim().replace(/^[^\d]+/i, '');
       const res = await fetch(`${apiBase}/store/orders/track?id=${encodeURIComponent(cleanId)}&email=${encodeURIComponent(billingEmail.trim())}`);
       const data = await res.json();

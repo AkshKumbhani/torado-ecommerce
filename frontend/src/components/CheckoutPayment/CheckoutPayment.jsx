@@ -98,7 +98,7 @@ const CheckoutPayment = () => {
       return;
     }
     try {
-      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+      const apiBase = API_BASE;
       const response = await fetch(`${apiBase}/store/coupons/validate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -132,7 +132,7 @@ const CheckoutPayment = () => {
     if (selectedPaymentMode === 'cod') {
       setPaymentBusy(true);
       try {
-        const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+        const apiBase = API_BASE;
         const token = localStorage.getItem('torado_customer_token') || localStorage.getItem('torado_token') || localStorage.getItem('token') || '';
         const codRes = await fetch(`${apiBase}/payments/cod/order`, {
           method: 'POST',
@@ -168,7 +168,7 @@ const CheckoutPayment = () => {
     }
     setPaymentBusy(true);
     try {
-      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+      const apiBase = API_BASE;
       const token = localStorage.getItem('torado_customer_token') || localStorage.getItem('torado_token') || localStorage.getItem('token') || '';
 
       const orderResponse = await fetch(`${apiBase}/payments/razorpay/order`, {

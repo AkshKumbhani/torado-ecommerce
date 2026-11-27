@@ -44,7 +44,7 @@ const ContactUs = () => {
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     try {
-      const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+      const apiBase = API_BASE;
       await fetch(`${apiBase}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

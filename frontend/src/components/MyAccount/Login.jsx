@@ -45,18 +45,18 @@ const Login = () => {
     setSubmitted(true); setApiError('');
     setErrors({});
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:4000/api'}/auth/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: form.email, password: form.password }) });
+      const response = await fetch(`${API_BASE}/auth/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: form.email, password: form.password }) });
       const data = await response.json(); if (!response.ok) throw new Error(data.message || 'Unable to sign in.');
       localStorage.setItem('torado_customer_token', data.token); alert(`Welcome back, ${data.user.name}.`); navigateTo('home', '#home');
     } catch (err) { setApiError(err.message); }
     finally { setSubmitted(false); }
   };
 
-  const requestOtp = async (e) => { e.preventDefault(); setApiError(''); try { const response=await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:4000/api'}/auth/forgot-password`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:forgotEmail})}); const data=await response.json(); if(!response.ok)throw new Error(data.message); setOtpSent(true); setApiError(data.message); } catch(err){setApiError(err.message);} };
-  const resetPassword = async (e) => { e.preventDefault(); setApiError(''); try { const response=await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:4000/api'}/auth/reset-password`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:forgotEmail,otp,password:newPassword})}); const data=await response.json(); if(!response.ok)throw new Error(data.message); setForgot(false);setOtpSent(false);setApiError('Password updated. Please sign in.'); } catch(err){setApiError(err.message);} };
+  const requestOtp = async (e) => { e.preventDefault(); setApiError(''); try { const response=await fetch(`${API_BASE}/auth/forgot-password`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:forgotEmail})}); const data=await response.json(); if(!response.ok)throw new Error(data.message); setOtpSent(true); setApiError(data.message); } catch(err){setApiError(err.message);} };
+  const resetPassword = async (e) => { e.preventDefault(); setApiError(''); try { const response=await fetch(`${API_BASE}/auth/reset-password`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:forgotEmail,otp,password:newPassword})}); const data=await response.json(); if(!response.ok)throw new Error(data.message); setForgot(false);setOtpSent(false);setApiError('Password updated. Please sign in.'); } catch(err){setApiError(err.message);} };
   const googleLogin = () => {
     if (!window.google?.accounts?.id || !import.meta.env.VITE_GOOGLE_CLIENT_ID) { setApiError('Google sign in needs VITE_GOOGLE_CLIENT_ID and Google Identity Services setup.'); return; }
-    window.google.accounts.id.initialize({ client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID, callback: async ({ credential }) => { try { const response=await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:4000/api'}/auth/google`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({credential})});const data=await response.json();if(!response.ok)throw new Error(data.message);localStorage.setItem('torado_customer_token',data.token);navigateTo('home','#home');}catch(err){setApiError(err.message);} } });
+    window.google.accounts.id.initialize({ client_id: import.meta.env.VITE_GOOGLE_CLIENT_ID, callback: async ({ credential }) => { try { const response=await fetch(`${API_BASE}/auth/google`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({credential})});const data=await response.json();if(!response.ok)throw new Error(data.message);localStorage.setItem('torado_customer_token',data.token);navigateTo('home','#home');}catch(err){setApiError(err.message);} } });
     window.google.accounts.id.prompt();
   };
 

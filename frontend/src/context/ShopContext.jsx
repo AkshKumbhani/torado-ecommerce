@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import API_BASE from '../config/api';
 
 const ShopContext = createContext();
 
@@ -198,7 +199,7 @@ export const ShopProvider = ({ children }) => {
 
   const refreshProductStatus = useCallback(async () => {
     try {
-      const res = await fetch('http://localhost:3000/api/store/product-status');
+      const res = await fetch(`${API_BASE}/store/product-status`);
       if (res.ok) {
         const data = await res.json();
         setProductStatuses(data);

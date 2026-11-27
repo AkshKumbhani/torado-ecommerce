@@ -41,7 +41,7 @@ const Register = () => {
     setSubmitted(true); setApiError('');
     setErrors({});
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:4000/api'}/auth/register`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: `${form.firstName.trim()} ${form.lastName.trim()}`, email: form.email, password: form.password }) });
+      const response = await fetch(`${API_BASE}/auth/register`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: `${form.firstName.trim()} ${form.lastName.trim()}`, email: form.email, password: form.password }) });
       const data = await response.json(); if (!response.ok) throw new Error(data.message || 'Unable to create your account.');
       localStorage.setItem('torado_customer_token', data.token); alert('Your account is ready.'); navigateTo('home', '#home');
     } catch (err) { setApiError(err.message); }
