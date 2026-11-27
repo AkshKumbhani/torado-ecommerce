@@ -13,12 +13,14 @@ import {
 } from '../services/emailService.js';
 import { sendWhatsAppOrderConfirmation } from '../services/whatsappService.js';
 const router = Router();
-const gateway = () => process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_KEY_SECRET ? new Razorpay({ key_id: process.env.RAZORPAY_KEY_ID, key_secret: process.env.RAZORPAY_KEY_SECRET }) : null;
+const RAZORPAY_KEY_ID = process.env.RAZORPAY_KEY_ID || 'rzp_test_ToSrGTcWCONzuH';
+const RAZORPAY_KEY_SECRET = process.env.RAZORPAY_KEY_SECRET || 'ucyG7kyunsTa5aWx6LbKGeKn';
+const gateway = () => (RAZORPAY_KEY_ID && RAZORPAY_KEY_SECRET) ? new Razorpay({ key_id: RAZORPAY_KEY_ID, key_secret: RAZORPAY_KEY_SECRET }) : null;
 
 router.get('/razorpay/key', async (_req, res) => {
   res.json({
     success: true,
-    key: process.env.RAZORPAY_KEY_ID || 'rzp_test_ToSrGTcWCONzuH'
+    key: RAZORPAY_KEY_ID
   });
 });
 
@@ -66,9 +68,9 @@ router.post('/razorpay/order', async (req,res,next)=>{let connection;try{
     await connection.execute('UPDATE products SET stock = GREATEST(0, stock - ?) WHERE id = ?', [line.quantity, line.product.id]);
   }
   await connection.execute("INSERT INTO payments(order_id,user_id,provider,provider_order_id,amount,status) VALUES(?,?,'online',?,?,'pending')", [created.insertId, customer.id, gatewayOrder.id, total]);
-  await connection.commit();res.json({orderId:gatewayOrder.id,amount:gatewayOrder.amount,currency:gatewayOrder.currency,keyId:process.env.RAZORPAY_KEY_ID,storeOrderId:created.insertId});
+  await connection.commit();res.json({orderId:gatewayOrder.id,amount:gatewayOrder.amount,currency:gatewayOrder.currency,keyId:RAZORPAY_KEY_ID,storeOrderId:created.insertId});
 }catch(e){if(connection)await connection.rollback();next(e);}finally{connection?.release();}});
-router.post('/razorpay/verify', async(req,res,next)=>{let connection;try{const {razorpay_order_id,razorpay_payment_id,razorpay_signature}=req.body;const expected=crypto.createHmac('sha256',process.env.RAZORPAY_KEY_SECRET||'').update(`${razorpay_order_id}|${razorpay_payment_id}`).digest('hex');if(!razorpay_signature||Buffer.byteLength(expected)!==Buffer.byteLength(razorpay_signature)||!crypto.timingSafeEqual(Buffer.from(expected),Buffer.from(razorpay_signature)))return res.status(400).json({message:'Payment signature verification failed.'});connection=await pool.getConnection();await connection.beginTransaction();const [rows]=await connection.execute("SELECT p.id,p.order_id,o.coupon_code FROM payments p JOIN orders o ON o.id=p.order_id WHERE p.provider_order_id=? FOR UPDATE",[razorpay_order_id]);if(!rows.length){await connection.rollback();return res.status(404).json({message:'Payment order not found or already processed.'});}await connection.execute("UPDATE payments SET transaction_id=?,status='completed' WHERE id=?",[razorpay_payment_id,rows[0].id]);await connection.execute("UPDATE orders SET payment_status='paid',status='confirmed' WHERE id=?",[rows[0].order_id]);if(rows[0].coupon_code)await connection.execute('UPDATE coupons SET usage_count=usage_count+1 WHERE code=?',[rows[0].coupon_code]);await connection.commit();
+router.post('/razorpay/verify', async(req,res,next)=>{let connection;try{const {razorpay_order_id,razorpay_payment_id,razorpay_signature}=req.body;const expected=crypto.createHmac('sha256',RAZORPAY_KEY_SECRET).update(`${razorpay_order_id}|${razorpay_payment_id}`).digest('hex');if(!razorpay_signature||Buffer.byteLength(expected)!==Buffer.byteLength(razorpay_signature)||!crypto.timingSafeEqual(Buffer.from(expected),Buffer.from(razorpay_signature)))return res.status(400).json({message:'Payment signature verification failed.'});connection=await pool.getConnection();await connection.beginTransaction();const [rows]=await connection.execute("SELECT p.id,p.order_id,o.coupon_code FROM payments p JOIN orders o ON o.id=p.order_id WHERE p.provider_order_id=? FOR UPDATE",[razorpay_order_id]);if(!rows.length){await connection.rollback();return res.status(404).json({message:'Payment order not found or already processed.'});}await connection.execute("UPDATE payments SET transaction_id=?,status='completed' WHERE id=?",[razorpay_payment_id,rows[0].id]);await connection.execute("UPDATE orders SET payment_status='paid',status='confirmed' WHERE id=?",[rows[0].order_id]);if(rows[0].coupon_code)await connection.execute('UPDATE coupons SET usage_count=usage_count+1 WHERE code=?',[rows[0].coupon_code]);await connection.commit();
 
   // Send Order Confirmation & Payment Success Emails
   try {
