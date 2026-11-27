@@ -15,6 +15,7 @@ import adminRoutes from './routes/admin.js';
 import storeRoutes from './routes/store.js';
 import paymentRoutes from './routes/payments.js';
 import uploadRoutes, { productUploadDirectory } from './routes/uploads.js';
+import aiRoutes from './routes/ai.js';
 
 // Global error handlers to prevent silent crashes
 process.on('uncaughtException', (err) => {
@@ -88,6 +89,7 @@ app.get('/api/test-email', async (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/payments', paymentRoutes);
+app.use('/api/ai', aiRoutes);
 app.use('/api', storeRoutes);
 app.use('/api/uploads', uploadRoutes);
 

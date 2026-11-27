@@ -42,6 +42,7 @@ import CheckoutShipping from './components/CheckoutShipping/CheckoutShipping.jsx
 import CheckoutPayment from './components/CheckoutPayment/CheckoutPayment.jsx';
 import TrackMyOrder from './components/TrackMyOrder/TrackMyOrder.jsx';
 import AdminPanel from './admin/AdminPanel.jsx';
+import ToradoAiChat from './components/ToradoAiChat/ToradoAiChat.jsx';
 
 function App() {
   if (window.location.pathname.startsWith('/admin')) return <AdminPanel />;
@@ -164,6 +165,9 @@ function App() {
       <LoginModal />
       <WishlistModal />
       <CartModal />
+
+      {/* Torado AI Interactive Shopping Assistant */}
+      <ToradoAiChat />
 
       {/* Back to Top */}
       <GoTop />
