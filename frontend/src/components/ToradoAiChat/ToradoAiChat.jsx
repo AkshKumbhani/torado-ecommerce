@@ -164,19 +164,42 @@ export default function ToradoAiChat() {
         </div>
       )}
 
-      {/* Floating Launcher Button */}
+      {/* Circular Floating Launcher Button */}
       {!isOpen && (
-        <button
-          type="button"
-          className="tai-launcher-btn"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open Torado AI Shopping Assistant"
-        >
-          <div className="tai-launcher-pulse"></div>
-          <span className="tai-launcher-icon">✨</span>
-          <span className="tai-launcher-text">Ask Torado AI</span>
-          {hasUnread && <span className="tai-unread-dot"></span>}
-        </button>
+        <div className="tai-launcher-wrapper">
+          <button
+            type="button"
+            className="tai-launcher-circle"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open Torado AI Shopping Assistant"
+            title="Chat with Torado AI Assistant"
+          >
+            <div className="tai-pulse-ring"></div>
+            <div className="tai-pulse-ring-outer"></div>
+            <svg
+              className="tai-ai-svg-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="28"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12C2 13.85 2.5 15.55 3.35 17L2.07 21.21C1.95 21.63 2.37 22.05 2.79 21.93L7 20.65C8.45 21.5 10.15 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM8.5 11C7.67 11 7 10.33 7 9.5C7 8.67 7.67 8 8.5 8C9.33 8 10 8.67 10 9.5C10 10.33 9.33 11 8.5 11ZM15.5 11C14.67 11 14 10.33 14 9.5C14 8.67 14.67 8 15.5 8C16.33 8 17 8.67 17 9.5C17 10.33 16.33 11 15.5 11ZM15.8 15.8C14.7 16.9 13.4 17.5 12 17.5C10.6 17.5 9.3 16.9 8.2 15.8C7.9 15.5 7.9 15.1 8.2 14.8C8.5 14.5 8.9 14.5 9.2 14.8C10 15.6 11 16 12 16C13 16 14 15.6 14.8 14.8C15.1 14.5 15.5 14.5 15.8 14.8C16.1 15.1 16.1 15.5 15.8 15.8Z"
+                fill="#FFFFFF"
+              />
+              <path
+                d="M19 2L19.6 3.6L21.2 4.2L19.6 4.8L19 6.4L18.4 4.8L16.8 4.2L18.4 3.6L19 2Z"
+                fill="#FFDF00"
+              />
+            </svg>
+            <span className="tai-ai-mini-badge">AI</span>
+            {hasUnread && <span className="tai-unread-dot"></span>}
+          </button>
+          <div className="tai-launcher-tooltip" onClick={() => setIsOpen(true)}>
+            <span>Ask Torado AI ✨</span>
+          </div>
+        </div>
       )}
 
       {/* Main Chat Window */}

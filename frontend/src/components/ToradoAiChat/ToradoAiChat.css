@@ -10,60 +10,129 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Floating Launcher Button */
-.tai-launcher-btn {
+/* Circular Floating Launcher Wrapper */
+.tai-launcher-wrapper {
   position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 10px;
+  flex-direction: row-reverse;
+  gap: 12px;
+}
+
+.tai-launcher-circle {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
   background: linear-gradient(135deg, #FC8A45 0%, #FE4267 100%);
   color: #ffffff;
-  border: none;
-  border-radius: 50px;
-  padding: 12px 20px 12px 16px;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 8px 24px rgba(254, 66, 103, 0.4), 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  outline: none;
-}
-
-.tai-launcher-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(254, 66, 103, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.tai-launcher-btn:active {
-  transform: translateY(0) scale(0.98);
-}
-
-.tai-launcher-icon {
-  font-size: 18px;
+  border: 2.5px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: tai-sparkle 2.5s infinite ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(254, 66, 103, 0.45), 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  z-index: 2;
 }
 
-@keyframes tai-sparkle {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.25) rotate(15deg); }
+.tai-launcher-circle:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(254, 66, 103, 0.55), 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.tai-launcher-text {
-  letter-spacing: 0.2px;
+.tai-launcher-circle:active {
+  transform: scale(0.95);
+}
+
+.tai-ai-svg-icon {
+  display: block;
+  transition: transform 0.2s;
+}
+
+.tai-launcher-circle:hover .tai-ai-svg-icon {
+  transform: rotate(5deg) scale(1.08);
+}
+
+.tai-ai-mini-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 20px;
+  border: 1.5px solid #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+/* Concentric Pulse Rings */
+.tai-pulse-ring,
+.tai-pulse-ring-outer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #FE4267;
+  pointer-events: none;
+  animation: tai-pulse-anim 2.4s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.tai-pulse-ring-outer {
+  animation-delay: 0.8s;
+}
+
+@keyframes tai-pulse-anim {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    width: 175%;
+    height: 175%;
+    opacity: 0;
+  }
+}
+
+/* Tooltip Pill next to Circle */
+.tai-launcher-tooltip {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 7px 14px;
+  border-radius: 50px;
+  font-size: 12.5px;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  white-space: nowrap;
+  animation: tai-pop-in 0.3s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.2s;
+}
+
+.tai-launcher-tooltip:hover {
+  background: #FE4267;
+  transform: translateX(-3px);
 }
 
 .tai-unread-dot {
   position: absolute;
   top: -2px;
   right: -2px;
-  width: 12px;
-  height: 12px;
+  width: 13px;
+  height: 13px;
   background: #10b981;
   border: 2px solid #ffffff;
   border-radius: 50%;
+  z-index: 3;
 }
 
 /* Chat Card Container */
@@ -535,19 +604,26 @@
 /* Responsive on Mobile */
 @media only screen and (max-width: 480px) {
   .tai-container {
-    bottom: 16px;
-    right: 16px;
-    left: 16px;
+    bottom: 20px;
+    right: 20px;
+    left: auto;
   }
-  .tai-launcher-btn {
-    width: 100%;
-    justify-content: center;
-    border-radius: 12px;
-    padding: 14px;
+  .tai-launcher-circle {
+    width: 52px;
+    height: 52px;
+  }
+  .tai-launcher-tooltip {
+    display: none;
   }
   .tai-chat-card {
-    width: 100%;
-    height: calc(100vh - 80px);
-    border-radius: 16px;
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    width: auto;
+    height: calc(100vh - 24px);
+    max-height: calc(100vh - 24px);
+    border-radius: 18px;
+    z-index: 10000;
   }
 }
