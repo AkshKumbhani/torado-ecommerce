@@ -55,7 +55,8 @@ app.use((err, _req, res, _next) => {
 });
 
 const port = Number(process.env.PORT || 3000);
-const server = app.listen(port, () => console.log(`Torado API listening on port ${port}`));
+const host = '0.0.0.0';
+const server = app.listen(port, host, () => console.log(`Torado API listening on ${host}:${port}`));
 
 server.on('error', (err) => {
   if (err.code === 'EADDRINUSE') {
